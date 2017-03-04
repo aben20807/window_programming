@@ -1,6 +1,0 @@
-D:\cygwin\home\user\pro\col4\window_programming\Homework1\Homework1\bin\Debug\Homework1.exe.config
-D:\cygwin\home\user\pro\col4\window_programming\Homework1\Homework1\bin\Debug\Homework1.exe
-D:\cygwin\home\user\pro\col4\window_programming\Homework1\Homework1\bin\Debug\Homework1.pdb
-D:\cygwin\home\user\pro\col4\window_programming\Homework1\Homework1\obj\Debug\Homework1.csprojResolveAssemblyReference.cache
-D:\cygwin\home\user\pro\col4\window_programming\Homework1\Homework1\obj\Debug\Homework1.exe
-D:\cygwin\home\user\pro\col4\window_programming\Homework1\Homework1\obj\Debug\Homework1.pdb
