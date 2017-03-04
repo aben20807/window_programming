@@ -12,6 +12,7 @@ namespace Homework1
         {
             bool firstInput = true;
             int numOfStudents = 0;
+            int[] key = new int[0];
             int[] number = new int[0];
             string[] name = new string[0];
             int[] scoreOfChinese = new int[0];
@@ -39,6 +40,7 @@ namespace Homework1
                         Console.WriteLine("\n");
                         //init
                         firstInput = false;
+                        key = new int[numOfStudents];
                         number = new int[numOfStudents];
                         name = new string[numOfStudents];
                         scoreOfChinese = new int[numOfStudents];
@@ -46,6 +48,7 @@ namespace Homework1
                         scoreOfMath = new int[numOfStudents];
                         for(int i = 0; i < numOfStudents; i++)
                         {
+                            key[i] = i;
                             number[i] = -1;
                             scoreOfChinese[i] = -1;
                             scoreOfEnglish[i] = -1;
@@ -92,12 +95,19 @@ namespace Homework1
                     Console.WriteLine("=====================================");
                     for(int i = 0; i < numOfStudents; i++)
                     {
-                        Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t", number[i], scoreOfChinese[i], scoreOfEnglish[i], scoreOfMath[i], name[i]);
+                        if(number[i] != -1)
+                        {
+                            Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t", number[key[i]], scoreOfChinese[i], scoreOfEnglish[key[i]], scoreOfMath[key[i]], name[key[i]]);
+                        }
+                        else
+                        {//student have not exist
+                            Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t", "未登錄", "未登錄", "未登錄", "未登錄", "未登錄");
+                        }
                     }
                 }
                 else if(mode == 3)
-                {
-
+                {//sort
+                    Array.Sort(scoreOfChinese, key);
                 }
             }
         }
