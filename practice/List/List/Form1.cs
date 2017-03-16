@@ -16,6 +16,7 @@ namespace List
         {
             InitializeComponent();
         }
+        //to collect page item
         List<Control> all = new List<Control>();
         List<Control> pageStart = new List<Control>();
         List<Control> pageLogin = new List<Control>();
@@ -24,11 +25,13 @@ namespace List
         List<Control> pageDelete = new List<Control>();
         List<TextBox> textBox = new List<TextBox>();
 
+        //to store data
         List<String> id = new List<String>();
         List<String> gender = new List<String>();
         List<String> phone = new List<String>();
         List<String> address = new List<String>();
-        private void button1_Click(object sender, EventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)//login
         {
             if (textBox1.Text == "Supervi" && textBox2.Text == "123456")
             {
@@ -50,12 +53,12 @@ namespace List
             }
             else
             {
-                MessageBox.Show("帳號或密碼錯誤", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("帳號或密碼錯誤\n試試\n帳號：Supervi\n密碼：123456", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
-        private void btnNew_Click(object sender, EventArgs e)
+        private void btnNew_Click(object sender, EventArgs e)//change to new page
         {
             labelNew.Text = "";
             labelFind.Text = "";
@@ -73,7 +76,171 @@ namespace List
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnOk_Click(object sender, EventArgs e)//new data
+        {
+            labelNew.Text = "";
+            labelFind.Text = "";
+            if (textBoxId.Text == "" ||
+                textBoxGender.Text == "" ||
+                textBoxPhone.Text == "" ||
+                textBoxAddress.Text == "")//check if any textBox is nothing
+            {
+                labelNew.Text = "各欄位不能為空，請重新輸入";
+            }
+            else
+            {
+                bool isExist = false;
+                foreach (String i in id)//check if data exist
+                {
+                    if (i == textBoxId.Text)
+                    {
+                        labelNew.Text = "資料已存在";
+                        isExist = true;
+                    }
+                }
+                if (isExist == false)
+                {
+                    id.Add(textBoxId.Text);
+                    gender.Add(textBoxGender.Text);
+                    phone.Add(textBoxPhone.Text);
+                    address.Add(textBoxAddress.Text);
+                    labelNew.Text = "資料已存入\n目前已有" + id.Count + "筆資料!!";
+                }
+            }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)//logout
+        {
+            labelNew.Text = "";
+            labelFind.Text = "";
+            foreach (Control i in all)
+            {
+                i.Visible = false;
+            }
+            foreach(Control i in pageStart)
+            {
+                i.Visible = true;
+            }
+            foreach (TextBox i in textBox)
+            {
+                i.Text = "";
+            }
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)//change to find page
+        {
+            labelNew.Text = "";
+            labelFind.Text = "";
+            foreach (Control i in all)
+            {
+                i.Visible = false;
+            }
+            foreach (Control i in pageFind)
+            {
+                i.Visible = true;
+            }
+            labelGender.Visible = false;
+            labelPhone.Visible = false;
+            labelAddress.Visible = false;
+            textBoxGender.Visible = false;
+            textBoxPhone.Visible = false;
+            textBoxAddress.Visible = false;
+            foreach (TextBox i in textBox)
+            {
+                i.Text = "";
+            }
+        }
+
+        private void btnFindData_Click(object sender, EventArgs e)//find data
+        {
+            labelNew.Text = "";
+            labelFind.Text = "";
+            if (textBoxId.Text == "")//check if input is nothing
+            {
+                labelFind.Text = "欄位不能為空!";
+            }
+            else
+            {
+                bool isFind = false;
+                int count = 0;
+                foreach(String i in id)
+                {
+                    if(i == textBoxId.Text)
+                    {
+                        isFind = true;
+                        labelGender.Visible = true;
+                        labelPhone.Visible = true;
+                        labelAddress.Visible = true;
+                        textBoxGender.Visible = true;
+                        textBoxPhone.Visible = true;
+                        textBoxAddress.Visible = true;
+                        
+                        textBoxGender.Text = gender.ElementAt(count);
+                        textBoxPhone.Text = phone.ElementAt(count);
+                        textBoxAddress.Text = address.ElementAt(count);
+                    }
+                    count++;
+                }
+                if(isFind == false)
+                {
+                    labelFind.Text = "無此筆資料";
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)//change to delete page
+        {
+            labelNew.Text = "";
+            labelFind.Text = "";
+            foreach (Control i in all)
+            {
+                i.Visible = false;
+            }
+            foreach (Control i in pageDelete)
+            {
+                i.Visible = true;
+            }
+            foreach (TextBox i in textBox)
+            {
+                i.Text = "";
+            }
+        }
+
+        private void btnDeleteData_Click(object sender, EventArgs e)//delete data
+        {
+            bool isFind = false;
+            int count = 0;
+            foreach (String i in id)
+            {
+                if (i == textBoxId.Text)
+                {
+                    isFind = true;
+                    labelGender.Visible = false;
+                    labelPhone.Visible = false;
+                    labelAddress.Visible = false;
+                    textBoxGender.Visible = false;
+                    textBoxPhone.Visible = false;
+                    textBoxAddress.Visible = false;
+
+                    gender.RemoveAt(count);
+                    phone.RemoveAt(count);
+                    address.RemoveAt(count);
+                    id.RemoveAt(count);
+                    break;
+                }
+                count++;
+            }
+            if (isFind == false)
+            {
+                labelFind.Text = "無此筆資料";
+            }
+            else
+            {
+                labelFind.Text = "刪除成功!!";
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)//collect item
         {
             //textBox
             textBox.Add(textBoxId);
@@ -135,192 +302,28 @@ namespace List
             all.AddRange(pageDelete);
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            labelNew.Text = "";
-            labelFind.Text = "";
-            foreach (Control i in all)
-            {
-                i.Visible = false;
-            }
-            foreach(Control i in pageStart)
-            {
-                i.Visible = true;
-            }
-            foreach (TextBox i in textBox)
-            {
-                i.Text = "";
-            }
-        }
-
-        private void btnOk_Click(object sender, EventArgs e)
-        {
-            labelNew.Text = "";
-            labelFind.Text = "";
-            if (textBoxId.Text == "" ||
-                textBoxGender.Text == "" ||
-                textBoxPhone.Text == "" ||
-                textBoxAddress.Text == "")
-            {
-                labelNew.Text = "各欄位不能為空，請重新輸入";
-            }
-            else
-            {
-                bool isExist = false;
-                foreach (String i in id)
-                {
-                    if (i == textBoxId.Text)
-                    {
-                        labelNew.Text = "資料已存在";
-                        isExist = true;
-                    }
-                }
-                if(isExist == false)
-                {
-                    id.Add(textBoxId.Text);
-                    gender.Add(textBoxGender.Text);
-                    phone.Add(textBoxPhone.Text);
-                    address.Add(textBoxAddress.Text);
-                    labelNew.Text = "資料已存入\n目前已有" + id.Count + "筆資料!!";
-                }
-            }
-        }
-
-        private void btnFind_Click(object sender, EventArgs e)
-        {
-            labelNew.Text = "";
-            labelFind.Text = "";
-            foreach (Control i in all)
-            {
-                i.Visible = false;
-            }
-            foreach (Control i in pageFind)
-            {
-                i.Visible = true;
-            }
-            labelGender.Visible = false;
-            labelPhone.Visible = false;
-            labelAddress.Visible = false;
-            textBoxGender.Visible = false;
-            textBoxPhone.Visible = false;
-            textBoxAddress.Visible = false;
-            foreach (TextBox i in textBox)
-            {
-                i.Text = "";
-            }
-        }
-
-        private void btnFindData_Click(object sender, EventArgs e)
-        {
-            labelNew.Text = "";
-            labelFind.Text = "";
-            if (textBoxId.Text == "")
-            {
-                labelFind.Text = "欄位不能為空!";
-            }
-            else
-            {
-                bool isFind = false;
-                int count = 0;
-                foreach(String i in id)
-                {
-                    if(i == textBoxId.Text)
-                    {
-                        isFind = true;
-                        labelGender.Visible = true;
-                        labelPhone.Visible = true;
-                        labelAddress.Visible = true;
-                        textBoxGender.Visible = true;
-                        textBoxPhone.Visible = true;
-                        textBoxAddress.Visible = true;
-                        
-                        textBoxGender.Text = gender.ElementAt(count);
-                        textBoxPhone.Text = phone.ElementAt(count);
-                        textBoxAddress.Text = address.ElementAt(count);
-                    }
-                    count++;
-                }
-                if(isFind == false)
-                {
-                    labelFind.Text = "無此筆資料";
-                }
-            }
-        }
-
         private void textBoxId_TextChanged(object sender, EventArgs e)
-        {
+        {//clear label
             labelNew.Text = "";
             labelFind.Text = "";
         }
 
         private void textBoxGender_TextChanged(object sender, EventArgs e)
-        {
+        {//clear label
             labelNew.Text = "";
             labelFind.Text = "";
         }
 
         private void textBoxPhone_TextChanged(object sender, EventArgs e)
-        {
+        {//clear label
             labelNew.Text = "";
             labelFind.Text = "";
         }
 
         private void textBoxAddress_TextChanged(object sender, EventArgs e)
-        {
+        {//clear label
             labelNew.Text = "";
             labelFind.Text = "";
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            labelNew.Text = "";
-            labelFind.Text = "";
-            foreach (Control i in all)
-            {
-                i.Visible = false;
-            }
-            foreach (Control i in pageDelete)
-            {
-                i.Visible = true;
-            }
-            foreach (TextBox i in textBox)
-            {
-                i.Text = "";
-            }
-        }
-
-        private void btnDeleteData_Click(object sender, EventArgs e)
-        {
-            bool isFind = false;
-            int count = 0;
-            foreach (String i in id)
-            {
-                if (i == textBoxId.Text)
-                {
-                    isFind = true;
-                    labelGender.Visible = false;
-                    labelPhone.Visible = false;
-                    labelAddress.Visible = false;
-                    textBoxGender.Visible = false;
-                    textBoxPhone.Visible = false;
-                    textBoxAddress.Visible = false;
-
-                    gender.RemoveAt(count);
-                    phone.RemoveAt(count);
-                    address.RemoveAt(count);
-                    id.RemoveAt(count);
-                    break;
-                }
-                count++;
-            }
-            if (isFind == false)
-            {
-                labelFind.Text = "無此筆資料";
-            }
-            else
-            {
-                labelFind.Text = "刪除成功!!";
-            }
         }
     }
 }
