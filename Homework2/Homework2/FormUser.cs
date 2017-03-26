@@ -16,5 +16,15 @@ namespace Homework2
         {
             InitializeComponent();
         }
+
+        private void FormUser_Load(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Maximized;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
