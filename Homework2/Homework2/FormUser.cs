@@ -19,12 +19,17 @@ namespace Homework2
 
         private void FormUser_Load(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Maximized;
+            CenterToScreen();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void accountManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
