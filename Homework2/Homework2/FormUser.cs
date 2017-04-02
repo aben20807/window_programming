@@ -20,6 +20,8 @@ namespace Homework2
         private void FormUser_Load(object sender, EventArgs e)
         {
             CenterToScreen();
+            //panelSeat.Hide();
+            panelMovie.Show();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -30,6 +32,12 @@ namespace Homework2
         private void accountManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void bookingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelSeat.Show();
+            panelMovie.Hide();
         }
     }
 }

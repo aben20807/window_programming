@@ -33,25 +33,24 @@
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnMovie1 = new System.Windows.Forms.Button();
-            this.btnMovie2 = new System.Windows.Forms.Button();
-            this.btnMovie3 = new System.Windows.Forms.Button();
+            this.btnFilm1 = new System.Windows.Forms.Button();
+            this.btnFilm2 = new System.Windows.Forms.Button();
+            this.btnFilm3 = new System.Windows.Forms.Button();
             this.panelSeat = new System.Windows.Forms.Panel();
-            this.button0 = new System.Windows.Forms.Button();
-            this.labelScreen = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.button41 = new System.Windows.Forms.Button();
+            this.button40 = new System.Windows.Forms.Button();
+            this.button39 = new System.Windows.Forms.Button();
+            this.button38 = new System.Windows.Forms.Button();
+            this.button37 = new System.Windows.Forms.Button();
+            this.button36 = new System.Windows.Forms.Button();
+            this.button35 = new System.Windows.Forms.Button();
+            this.button34 = new System.Windows.Forms.Button();
+            this.button33 = new System.Windows.Forms.Button();
+            this.button32 = new System.Windows.Forms.Button();
+            this.button31 = new System.Windows.Forms.Button();
+            this.button30 = new System.Windows.Forms.Button();
+            this.button29 = new System.Windows.Forms.Button();
+            this.button28 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
@@ -66,22 +65,25 @@
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button34 = new System.Windows.Forms.Button();
-            this.button35 = new System.Windows.Forms.Button();
-            this.button36 = new System.Windows.Forms.Button();
-            this.button37 = new System.Windows.Forms.Button();
-            this.button38 = new System.Windows.Forms.Button();
-            this.button39 = new System.Windows.Forms.Button();
-            this.button40 = new System.Windows.Forms.Button();
-            this.button41 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.labelScreen = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button0 = new System.Windows.Forms.Button();
+            this.panelMovie = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panelSeat.SuspendLayout();
+            this.panelMovie.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -92,7 +94,7 @@
             this.settingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1013, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1012, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -103,6 +105,7 @@
             this.bookingToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
             this.bookingToolStripMenuItem.Size = new System.Drawing.Size(79, 23);
             this.bookingToolStripMenuItem.Text = "Booking";
+            this.bookingToolStripMenuItem.Click += new System.EventHandler(this.bookingToolStripMenuItem_Click);
             // 
             // settingToolStripMenuItem
             // 
@@ -111,7 +114,7 @@
             this.exitToolStripMenuItem});
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
             this.settingToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(71, 23);
             this.settingToolStripMenuItem.Text = "Setting";
             // 
             // accountManagementToolStripMenuItem
@@ -131,41 +134,42 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // btnMovie1
+            // btnFilm1
             // 
-            this.btnMovie1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnMovie1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMovie1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnMovie1.Location = new System.Drawing.Point(169, 62);
-            this.btnMovie1.Name = "btnMovie1";
-            this.btnMovie1.Size = new System.Drawing.Size(225, 394);
-            this.btnMovie1.TabIndex = 1;
-            this.btnMovie1.UseVisualStyleBackColor = true;
+            this.btnFilm1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnFilm1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilm1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnFilm1.Location = new System.Drawing.Point(142, 98);
+            this.btnFilm1.Name = "btnFilm1";
+            this.btnFilm1.Size = new System.Drawing.Size(225, 394);
+            this.btnFilm1.TabIndex = 1;
+            this.btnFilm1.UseVisualStyleBackColor = true;
             // 
-            // btnMovie2
+            // btnFilm2
             // 
-            this.btnMovie2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnMovie2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMovie2.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnMovie2.Location = new System.Drawing.Point(400, 62);
-            this.btnMovie2.Name = "btnMovie2";
-            this.btnMovie2.Size = new System.Drawing.Size(225, 394);
-            this.btnMovie2.TabIndex = 1;
-            this.btnMovie2.UseVisualStyleBackColor = true;
+            this.btnFilm2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnFilm2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilm2.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnFilm2.Location = new System.Drawing.Point(397, 98);
+            this.btnFilm2.Name = "btnFilm2";
+            this.btnFilm2.Size = new System.Drawing.Size(225, 394);
+            this.btnFilm2.TabIndex = 1;
+            this.btnFilm2.UseVisualStyleBackColor = true;
             // 
-            // btnMovie3
+            // btnFilm3
             // 
-            this.btnMovie3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnMovie3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMovie3.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnMovie3.Location = new System.Drawing.Point(631, 62);
-            this.btnMovie3.Name = "btnMovie3";
-            this.btnMovie3.Size = new System.Drawing.Size(225, 394);
-            this.btnMovie3.TabIndex = 1;
-            this.btnMovie3.UseVisualStyleBackColor = true;
+            this.btnFilm3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnFilm3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilm3.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnFilm3.Location = new System.Drawing.Point(646, 98);
+            this.btnFilm3.Name = "btnFilm3";
+            this.btnFilm3.Size = new System.Drawing.Size(225, 394);
+            this.btnFilm3.TabIndex = 1;
+            this.btnFilm3.UseVisualStyleBackColor = true;
             // 
             // panelSeat
             // 
+            this.panelSeat.Controls.Add(this.panelMovie);
             this.panelSeat.Controls.Add(this.button41);
             this.panelSeat.Controls.Add(this.button40);
             this.panelSeat.Controls.Add(this.button39);
@@ -210,162 +214,150 @@
             this.panelSeat.Controls.Add(this.button1);
             this.panelSeat.Controls.Add(this.button0);
             this.panelSeat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSeat.Location = new System.Drawing.Point(0, 27);
+            this.panelSeat.Location = new System.Drawing.Point(0, 0);
             this.panelSeat.Name = "panelSeat";
-            this.panelSeat.Size = new System.Drawing.Size(1013, 526);
+            this.panelSeat.Size = new System.Drawing.Size(1012, 553);
             this.panelSeat.TabIndex = 2;
             // 
-            // button0
+            // button41
             // 
-            this.button0.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button0.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button0.Location = new System.Drawing.Point(12, 98);
-            this.button0.Name = "button0";
-            this.button0.Size = new System.Drawing.Size(59, 57);
-            this.button0.TabIndex = 0;
-            this.button0.UseVisualStyleBackColor = true;
+            this.button41.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button41.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button41.Location = new System.Drawing.Point(942, 315);
+            this.button41.Name = "button41";
+            this.button41.Size = new System.Drawing.Size(59, 57);
+            this.button41.TabIndex = 38;
+            this.button41.UseVisualStyleBackColor = true;
             // 
-            // labelScreen
+            // button40
             // 
-            this.labelScreen.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelScreen.AutoSize = true;
-            this.labelScreen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelScreen.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelScreen.Location = new System.Drawing.Point(474, 8);
-            this.labelScreen.Name = "labelScreen";
-            this.labelScreen.Size = new System.Drawing.Size(66, 24);
-            this.labelScreen.TabIndex = 2;
-            this.labelScreen.Text = "Screen";
+            this.button40.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button40.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button40.Location = new System.Drawing.Point(877, 315);
+            this.button40.Name = "button40";
+            this.button40.Size = new System.Drawing.Size(59, 57);
+            this.button40.TabIndex = 37;
+            this.button40.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button39
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(77, 98);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 57);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button39.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button39.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button39.Location = new System.Drawing.Point(812, 315);
+            this.button39.Name = "button39";
+            this.button39.Size = new System.Drawing.Size(59, 57);
+            this.button39.TabIndex = 36;
+            this.button39.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // button38
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button2.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.Location = new System.Drawing.Point(142, 98);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(59, 57);
-            this.button2.TabIndex = 0;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button38.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button38.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button38.Location = new System.Drawing.Point(747, 315);
+            this.button38.Name = "button38";
+            this.button38.Size = new System.Drawing.Size(59, 57);
+            this.button38.TabIndex = 35;
+            this.button38.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button37
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button3.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button3.Location = new System.Drawing.Point(207, 98);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(59, 57);
-            this.button3.TabIndex = 0;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button37.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button37.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button37.Location = new System.Drawing.Point(639, 315);
+            this.button37.Name = "button37";
+            this.button37.Size = new System.Drawing.Size(59, 57);
+            this.button37.TabIndex = 34;
+            this.button37.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // button36
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button4.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button4.Location = new System.Drawing.Point(314, 98);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(59, 57);
-            this.button4.TabIndex = 0;
-            this.button4.UseVisualStyleBackColor = true;
+            this.button36.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button36.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button36.Location = new System.Drawing.Point(574, 315);
+            this.button36.Name = "button36";
+            this.button36.Size = new System.Drawing.Size(59, 57);
+            this.button36.TabIndex = 33;
+            this.button36.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // button35
             // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button5.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button5.Location = new System.Drawing.Point(379, 98);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(59, 57);
-            this.button5.TabIndex = 0;
-            this.button5.UseVisualStyleBackColor = true;
+            this.button35.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button35.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button35.Location = new System.Drawing.Point(509, 315);
+            this.button35.Name = "button35";
+            this.button35.Size = new System.Drawing.Size(59, 57);
+            this.button35.TabIndex = 32;
+            this.button35.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // button34
             // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button6.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button6.Location = new System.Drawing.Point(444, 98);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(59, 57);
-            this.button6.TabIndex = 3;
-            this.button6.UseVisualStyleBackColor = true;
+            this.button34.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button34.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button34.Location = new System.Drawing.Point(444, 315);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(59, 57);
+            this.button34.TabIndex = 31;
+            this.button34.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // button33
             // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button7.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button7.Location = new System.Drawing.Point(509, 98);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(59, 57);
-            this.button7.TabIndex = 4;
-            this.button7.UseVisualStyleBackColor = true;
+            this.button33.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button33.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button33.Location = new System.Drawing.Point(379, 315);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(59, 57);
+            this.button33.TabIndex = 30;
+            this.button33.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // button32
             // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button8.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button8.Location = new System.Drawing.Point(574, 98);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(59, 57);
-            this.button8.TabIndex = 5;
-            this.button8.UseVisualStyleBackColor = true;
+            this.button32.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button32.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button32.Location = new System.Drawing.Point(314, 315);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(59, 57);
+            this.button32.TabIndex = 29;
+            this.button32.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // button31
             // 
-            this.button9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button9.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button9.Location = new System.Drawing.Point(639, 98);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(59, 57);
-            this.button9.TabIndex = 6;
-            this.button9.UseVisualStyleBackColor = true;
+            this.button31.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button31.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button31.Location = new System.Drawing.Point(207, 315);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(59, 57);
+            this.button31.TabIndex = 28;
+            this.button31.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // button30
             // 
-            this.button10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button10.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button10.Location = new System.Drawing.Point(747, 98);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(59, 57);
-            this.button10.TabIndex = 7;
-            this.button10.UseVisualStyleBackColor = true;
+            this.button30.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button30.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button30.Location = new System.Drawing.Point(142, 315);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(59, 57);
+            this.button30.TabIndex = 27;
+            this.button30.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // button29
             // 
-            this.button11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button11.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button11.Location = new System.Drawing.Point(812, 98);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(59, 57);
-            this.button11.TabIndex = 8;
-            this.button11.UseVisualStyleBackColor = true;
+            this.button29.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button29.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button29.Location = new System.Drawing.Point(77, 315);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(59, 57);
+            this.button29.TabIndex = 26;
+            this.button29.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // button28
             // 
-            this.button12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button12.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button12.Location = new System.Drawing.Point(877, 98);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(59, 57);
-            this.button12.TabIndex = 9;
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button13.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button13.Location = new System.Drawing.Point(942, 98);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(59, 57);
-            this.button13.TabIndex = 10;
-            this.button13.UseVisualStyleBackColor = true;
+            this.button28.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button28.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button28.Location = new System.Drawing.Point(12, 315);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(59, 57);
+            this.button28.TabIndex = 25;
+            this.button28.UseVisualStyleBackColor = true;
             // 
             // button14
             // 
@@ -507,156 +499,176 @@
             this.button27.TabIndex = 16;
             this.button27.UseVisualStyleBackColor = true;
             // 
-            // button28
+            // button13
             // 
-            this.button28.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button28.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button28.Location = new System.Drawing.Point(12, 315);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(59, 57);
-            this.button28.TabIndex = 25;
-            this.button28.UseVisualStyleBackColor = true;
+            this.button13.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button13.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button13.Location = new System.Drawing.Point(942, 98);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(59, 57);
+            this.button13.TabIndex = 10;
+            this.button13.UseVisualStyleBackColor = true;
             // 
-            // button29
+            // button12
             // 
-            this.button29.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button29.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button29.Location = new System.Drawing.Point(77, 315);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(59, 57);
-            this.button29.TabIndex = 26;
-            this.button29.UseVisualStyleBackColor = true;
+            this.button12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button12.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button12.Location = new System.Drawing.Point(877, 98);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(59, 57);
+            this.button12.TabIndex = 9;
+            this.button12.UseVisualStyleBackColor = true;
             // 
-            // button30
+            // button6
             // 
-            this.button30.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button30.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button30.Location = new System.Drawing.Point(142, 315);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(59, 57);
-            this.button30.TabIndex = 27;
-            this.button30.UseVisualStyleBackColor = true;
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button6.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button6.Location = new System.Drawing.Point(444, 98);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(59, 57);
+            this.button6.TabIndex = 3;
+            this.button6.UseVisualStyleBackColor = true;
             // 
-            // button31
+            // button7
             // 
-            this.button31.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button31.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button31.Location = new System.Drawing.Point(207, 315);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(59, 57);
-            this.button31.TabIndex = 28;
-            this.button31.UseVisualStyleBackColor = true;
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button7.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button7.Location = new System.Drawing.Point(509, 98);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(59, 57);
+            this.button7.TabIndex = 4;
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // button32
+            // button8
             // 
-            this.button32.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button32.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button32.Location = new System.Drawing.Point(314, 315);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(59, 57);
-            this.button32.TabIndex = 29;
-            this.button32.UseVisualStyleBackColor = true;
+            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button8.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button8.Location = new System.Drawing.Point(574, 98);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(59, 57);
+            this.button8.TabIndex = 5;
+            this.button8.UseVisualStyleBackColor = true;
             // 
-            // button33
+            // button9
             // 
-            this.button33.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button33.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button33.Location = new System.Drawing.Point(379, 315);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(59, 57);
-            this.button33.TabIndex = 30;
-            this.button33.UseVisualStyleBackColor = true;
+            this.button9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button9.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button9.Location = new System.Drawing.Point(639, 98);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(59, 57);
+            this.button9.TabIndex = 6;
+            this.button9.UseVisualStyleBackColor = true;
             // 
-            // button34
+            // button10
             // 
-            this.button34.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button34.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button34.Location = new System.Drawing.Point(444, 315);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(59, 57);
-            this.button34.TabIndex = 31;
-            this.button34.UseVisualStyleBackColor = true;
+            this.button10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button10.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button10.Location = new System.Drawing.Point(747, 98);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(59, 57);
+            this.button10.TabIndex = 7;
+            this.button10.UseVisualStyleBackColor = true;
             // 
-            // button35
+            // button11
             // 
-            this.button35.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button35.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button35.Location = new System.Drawing.Point(509, 315);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(59, 57);
-            this.button35.TabIndex = 32;
-            this.button35.UseVisualStyleBackColor = true;
+            this.button11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button11.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button11.Location = new System.Drawing.Point(812, 98);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(59, 57);
+            this.button11.TabIndex = 8;
+            this.button11.UseVisualStyleBackColor = true;
             // 
-            // button36
+            // labelScreen
             // 
-            this.button36.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button36.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button36.Location = new System.Drawing.Point(574, 315);
-            this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(59, 57);
-            this.button36.TabIndex = 33;
-            this.button36.UseVisualStyleBackColor = true;
+            this.labelScreen.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelScreen.AutoSize = true;
+            this.labelScreen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelScreen.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelScreen.Location = new System.Drawing.Point(469, 36);
+            this.labelScreen.Name = "labelScreen";
+            this.labelScreen.Size = new System.Drawing.Size(66, 24);
+            this.labelScreen.TabIndex = 2;
+            this.labelScreen.Text = "Screen";
             // 
-            // button37
+            // button5
             // 
-            this.button37.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button37.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button37.Location = new System.Drawing.Point(639, 315);
-            this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(59, 57);
-            this.button37.TabIndex = 34;
-            this.button37.UseVisualStyleBackColor = true;
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button5.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button5.Location = new System.Drawing.Point(379, 98);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(59, 57);
+            this.button5.TabIndex = 0;
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // button38
+            // button4
             // 
-            this.button38.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button38.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button38.Location = new System.Drawing.Point(747, 315);
-            this.button38.Name = "button38";
-            this.button38.Size = new System.Drawing.Size(59, 57);
-            this.button38.TabIndex = 35;
-            this.button38.UseVisualStyleBackColor = true;
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button4.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button4.Location = new System.Drawing.Point(314, 98);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(59, 57);
+            this.button4.TabIndex = 0;
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // button39
+            // button3
             // 
-            this.button39.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button39.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button39.Location = new System.Drawing.Point(812, 315);
-            this.button39.Name = "button39";
-            this.button39.Size = new System.Drawing.Size(59, 57);
-            this.button39.TabIndex = 36;
-            this.button39.UseVisualStyleBackColor = true;
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button3.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button3.Location = new System.Drawing.Point(207, 98);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(59, 57);
+            this.button3.TabIndex = 0;
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // button40
+            // button2
             // 
-            this.button40.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button40.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button40.Location = new System.Drawing.Point(877, 315);
-            this.button40.Name = "button40";
-            this.button40.Size = new System.Drawing.Size(59, 57);
-            this.button40.TabIndex = 37;
-            this.button40.UseVisualStyleBackColor = true;
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button2.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button2.Location = new System.Drawing.Point(142, 98);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(59, 57);
+            this.button2.TabIndex = 0;
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // button41
+            // button1
             // 
-            this.button41.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button41.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button41.Location = new System.Drawing.Point(942, 315);
-            this.button41.Name = "button41";
-            this.button41.Size = new System.Drawing.Size(59, 57);
-            this.button41.TabIndex = 38;
-            this.button41.UseVisualStyleBackColor = true;
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button1.Location = new System.Drawing.Point(77, 98);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(59, 57);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button0
+            // 
+            this.button0.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button0.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button0.Location = new System.Drawing.Point(12, 98);
+            this.button0.Name = "button0";
+            this.button0.Size = new System.Drawing.Size(59, 57);
+            this.button0.TabIndex = 0;
+            this.button0.UseVisualStyleBackColor = true;
+            // 
+            // panelMovie
+            // 
+            this.panelMovie.Controls.Add(this.btnFilm3);
+            this.panelMovie.Controls.Add(this.btnFilm1);
+            this.panelMovie.Controls.Add(this.btnFilm2);
+            this.panelMovie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMovie.Location = new System.Drawing.Point(0, 0);
+            this.panelMovie.Name = "panelMovie";
+            this.panelMovie.Size = new System.Drawing.Size(1012, 553);
+            this.panelMovie.TabIndex = 39;
             // 
             // FormUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 553);
-            this.Controls.Add(this.panelSeat);
-            this.Controls.Add(this.btnMovie3);
-            this.Controls.Add(this.btnMovie2);
-            this.Controls.Add(this.btnMovie1);
+            this.ClientSize = new System.Drawing.Size(1012, 553);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panelSeat);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormUser";
             this.Text = "FormUser";
@@ -665,6 +677,7 @@
             this.menuStrip1.PerformLayout();
             this.panelSeat.ResumeLayout(false);
             this.panelSeat.PerformLayout();
+            this.panelMovie.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -677,9 +690,9 @@
         private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Button btnMovie1;
-        private System.Windows.Forms.Button btnMovie2;
-        private System.Windows.Forms.Button btnMovie3;
+        private System.Windows.Forms.Button btnFilm1;
+        private System.Windows.Forms.Button btnFilm2;
+        private System.Windows.Forms.Button btnFilm3;
         private System.Windows.Forms.Panel panelSeat;
         private System.Windows.Forms.Button button0;
         private System.Windows.Forms.Label labelScreen;
@@ -724,5 +737,6 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.Panel panelMovie;
     }
 }
