@@ -8,6 +8,8 @@ namespace Homework2
 {
     class Member
     {
+        public static List<Member> memberData = new List<Member>();
+
         private string _username;
         private string _password;
         private string _seatNumber;

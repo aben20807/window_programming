@@ -33,11 +33,7 @@
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnFilm1 = new System.Windows.Forms.Button();
-            this.btnFilm2 = new System.Windows.Forms.Button();
-            this.btnFilm3 = new System.Windows.Forms.Button();
             this.panelSeat = new System.Windows.Forms.Panel();
-            this.panelMovie = new System.Windows.Forms.Panel();
             this.button41 = new System.Windows.Forms.Button();
             this.button40 = new System.Windows.Forms.Button();
             this.button39 = new System.Windows.Forms.Button();
@@ -81,9 +77,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button0 = new System.Windows.Forms.Button();
+            this.panelFilm = new System.Windows.Forms.Panel();
+            this.labelHello = new System.Windows.Forms.Label();
+            this.btnFilm3 = new System.Windows.Forms.Button();
+            this.btnFilm1 = new System.Windows.Forms.Button();
+            this.btnFilm2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panelSeat.SuspendLayout();
-            this.panelMovie.SuspendLayout();
+            this.panelFilm.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -134,42 +135,8 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // btnFilm1
-            // 
-            this.btnFilm1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnFilm1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilm1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnFilm1.Location = new System.Drawing.Point(142, 98);
-            this.btnFilm1.Name = "btnFilm1";
-            this.btnFilm1.Size = new System.Drawing.Size(225, 394);
-            this.btnFilm1.TabIndex = 1;
-            this.btnFilm1.UseVisualStyleBackColor = true;
-            // 
-            // btnFilm2
-            // 
-            this.btnFilm2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnFilm2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilm2.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnFilm2.Location = new System.Drawing.Point(397, 98);
-            this.btnFilm2.Name = "btnFilm2";
-            this.btnFilm2.Size = new System.Drawing.Size(225, 394);
-            this.btnFilm2.TabIndex = 1;
-            this.btnFilm2.UseVisualStyleBackColor = true;
-            // 
-            // btnFilm3
-            // 
-            this.btnFilm3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnFilm3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilm3.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnFilm3.Location = new System.Drawing.Point(646, 98);
-            this.btnFilm3.Name = "btnFilm3";
-            this.btnFilm3.Size = new System.Drawing.Size(225, 394);
-            this.btnFilm3.TabIndex = 1;
-            this.btnFilm3.UseVisualStyleBackColor = true;
-            // 
             // panelSeat
             // 
-            this.panelSeat.Controls.Add(this.panelMovie);
             this.panelSeat.Controls.Add(this.button41);
             this.panelSeat.Controls.Add(this.button40);
             this.panelSeat.Controls.Add(this.button39);
@@ -213,22 +180,10 @@
             this.panelSeat.Controls.Add(this.button2);
             this.panelSeat.Controls.Add(this.button1);
             this.panelSeat.Controls.Add(this.button0);
-            this.panelSeat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSeat.Location = new System.Drawing.Point(0, 0);
+            this.panelSeat.Location = new System.Drawing.Point(119, 30);
             this.panelSeat.Name = "panelSeat";
             this.panelSeat.Size = new System.Drawing.Size(1012, 553);
             this.panelSeat.TabIndex = 2;
-            // 
-            // panelMovie
-            // 
-            this.panelMovie.Controls.Add(this.btnFilm3);
-            this.panelMovie.Controls.Add(this.btnFilm1);
-            this.panelMovie.Controls.Add(this.btnFilm2);
-            this.panelMovie.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMovie.Location = new System.Drawing.Point(0, 0);
-            this.panelMovie.Name = "panelMovie";
-            this.panelMovie.Size = new System.Drawing.Size(1012, 553);
-            this.panelMovie.TabIndex = 39;
             // 
             // button41
             // 
@@ -662,11 +617,67 @@
             this.button0.TabIndex = 0;
             this.button0.UseVisualStyleBackColor = true;
             // 
+            // panelFilm
+            // 
+            this.panelFilm.Controls.Add(this.labelHello);
+            this.panelFilm.Controls.Add(this.btnFilm3);
+            this.panelFilm.Controls.Add(this.btnFilm1);
+            this.panelFilm.Controls.Add(this.btnFilm2);
+            this.panelFilm.Location = new System.Drawing.Point(0, 107);
+            this.panelFilm.Name = "panelFilm";
+            this.panelFilm.Size = new System.Drawing.Size(1012, 553);
+            this.panelFilm.TabIndex = 40;
+            // 
+            // labelHello
+            // 
+            this.labelHello.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelHello.AutoSize = true;
+            this.labelHello.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelHello.Location = new System.Drawing.Point(451, 44);
+            this.labelHello.Name = "labelHello";
+            this.labelHello.Size = new System.Drawing.Size(60, 22);
+            this.labelHello.TabIndex = 2;
+            this.labelHello.Text = "Hello, ";
+            // 
+            // btnFilm3
+            // 
+            this.btnFilm3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnFilm3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilm3.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnFilm3.Location = new System.Drawing.Point(692, 98);
+            this.btnFilm3.Name = "btnFilm3";
+            this.btnFilm3.Size = new System.Drawing.Size(284, 394);
+            this.btnFilm3.TabIndex = 1;
+            this.btnFilm3.UseVisualStyleBackColor = true;
+            // 
+            // btnFilm1
+            // 
+            this.btnFilm1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnFilm1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilm1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnFilm1.Location = new System.Drawing.Point(52, 98);
+            this.btnFilm1.Name = "btnFilm1";
+            this.btnFilm1.Size = new System.Drawing.Size(284, 394);
+            this.btnFilm1.TabIndex = 1;
+            this.btnFilm1.UseVisualStyleBackColor = true;
+            // 
+            // btnFilm2
+            // 
+            this.btnFilm2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnFilm2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilm2.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnFilm2.Location = new System.Drawing.Point(370, 98);
+            this.btnFilm2.Name = "btnFilm2";
+            this.btnFilm2.Size = new System.Drawing.Size(284, 394);
+            this.btnFilm2.TabIndex = 1;
+            this.btnFilm2.UseVisualStyleBackColor = true;
+            // 
             // FormUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 553);
+            this.Controls.Add(this.panelFilm);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panelSeat);
             this.MainMenuStrip = this.menuStrip1;
@@ -678,7 +689,8 @@
             this.menuStrip1.PerformLayout();
             this.panelSeat.ResumeLayout(false);
             this.panelSeat.PerformLayout();
-            this.panelMovie.ResumeLayout(false);
+            this.panelFilm.ResumeLayout(false);
+            this.panelFilm.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -691,9 +703,6 @@
         private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Button btnFilm1;
-        private System.Windows.Forms.Button btnFilm2;
-        private System.Windows.Forms.Button btnFilm3;
         private System.Windows.Forms.Panel panelSeat;
         private System.Windows.Forms.Button button0;
         private System.Windows.Forms.Label labelScreen;
@@ -738,6 +747,10 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Panel panelMovie;
+        private System.Windows.Forms.Panel panelFilm;
+        private System.Windows.Forms.Label labelHello;
+        private System.Windows.Forms.Button btnFilm3;
+        private System.Windows.Forms.Button btnFilm1;
+        private System.Windows.Forms.Button btnFilm2;
     }
 }

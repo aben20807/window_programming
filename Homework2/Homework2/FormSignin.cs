@@ -12,10 +12,10 @@ namespace Homework2
 {
     public partial class FormSignin : Form
     {
-        //public FormSignin formSignin = new FormSignin();
-        public FormUser formUser;// = new FormUser(this);
+        public FormUser formUser;
         public FormSupervisor formSupervisor = new FormSupervisor();
-        List<Member> memberData = new List<Member>();
+        //public static List<Member> memberData = new List<Member>();
+        public static string signinUsername = "";
         public FormSignin()
         {
             InitializeComponent();
@@ -51,9 +51,9 @@ namespace Homework2
             Member m1 = new Member("John", "123");
             Member m2 = new Member("Ben", "456");
             Member m3 = new Member("Eva", "789");
-            memberData.Add(m1);
-            memberData.Add(m2);
-            memberData.Add(m3);
+            Member.memberData.Add(m1);
+            Member.memberData.Add(m2);
+            Member.memberData.Add(m3);
         }
 
         private void textboxUsername_Leave(object sender, EventArgs e)
@@ -102,10 +102,19 @@ namespace Homework2
 
         private void btnSignin_Click(object sender, EventArgs e)
         {
-            foreach(Member i in memberData)
+            foreach(Member i in Member.memberData)
             {
                 if(i.getUsername() == textboxUsername.Text && i.getPassword() == textboxPassword.Text)
                 {
+                    //textBox init
+                    signinUsername = textboxUsername.Text;
+                    textboxPassword.Text = "password";
+                    textboxPassword.ForeColor = Color.Gray;
+                    textboxPassword.UseSystemPasswordChar = false;
+                    textboxUsername.Text = "username";
+                    textboxUsername.ForeColor = Color.Gray;
+                    //open form to book film
+                    formUser.Dispose();
                     formUser = new FormUser(this);
                     formUser.Show();
                     this.Hide();
