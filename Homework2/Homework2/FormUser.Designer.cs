@@ -37,6 +37,7 @@
             this.btnFilm2 = new System.Windows.Forms.Button();
             this.btnFilm3 = new System.Windows.Forms.Button();
             this.panelSeat = new System.Windows.Forms.Panel();
+            this.panelMovie = new System.Windows.Forms.Panel();
             this.button41 = new System.Windows.Forms.Button();
             this.button40 = new System.Windows.Forms.Button();
             this.button39 = new System.Windows.Forms.Button();
@@ -80,7 +81,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button0 = new System.Windows.Forms.Button();
-            this.panelMovie = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panelSeat.SuspendLayout();
             this.panelMovie.SuspendLayout();
@@ -218,6 +218,17 @@
             this.panelSeat.Name = "panelSeat";
             this.panelSeat.Size = new System.Drawing.Size(1012, 553);
             this.panelSeat.TabIndex = 2;
+            // 
+            // panelMovie
+            // 
+            this.panelMovie.Controls.Add(this.btnFilm3);
+            this.panelMovie.Controls.Add(this.btnFilm1);
+            this.panelMovie.Controls.Add(this.btnFilm2);
+            this.panelMovie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMovie.Location = new System.Drawing.Point(0, 0);
+            this.panelMovie.Name = "panelMovie";
+            this.panelMovie.Size = new System.Drawing.Size(1012, 553);
+            this.panelMovie.TabIndex = 39;
             // 
             // button41
             // 
@@ -651,17 +662,6 @@
             this.button0.TabIndex = 0;
             this.button0.UseVisualStyleBackColor = true;
             // 
-            // panelMovie
-            // 
-            this.panelMovie.Controls.Add(this.btnFilm3);
-            this.panelMovie.Controls.Add(this.btnFilm1);
-            this.panelMovie.Controls.Add(this.btnFilm2);
-            this.panelMovie.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMovie.Location = new System.Drawing.Point(0, 0);
-            this.panelMovie.Name = "panelMovie";
-            this.panelMovie.Size = new System.Drawing.Size(1012, 553);
-            this.panelMovie.TabIndex = 39;
-            // 
             // FormUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -672,6 +672,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormUser";
             this.Text = "FormUser";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormUser_FormClosed);
             this.Load += new System.EventHandler(this.FormUser_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

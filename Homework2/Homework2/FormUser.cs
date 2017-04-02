@@ -12,9 +12,20 @@ namespace Homework2
 {
     public partial class FormUser : Form
     {
+        private FormSignin _parent;
         public FormUser()
         {
             InitializeComponent();
+        }
+
+        public FormUser(FormSignin parent)
+        {
+            InitializeComponent();
+            this._parent = parent;
+        }
+        public FormSignin getParent()
+        {
+            return this._parent;
         }
 
         private void FormUser_Load(object sender, EventArgs e)
@@ -31,13 +42,18 @@ namespace Homework2
 
         private void accountManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void bookingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panelSeat.Show();
             panelMovie.Hide();
+        }
+
+        private void FormUser_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            getParent().Show();
         }
     }
 }

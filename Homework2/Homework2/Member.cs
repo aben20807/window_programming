@@ -12,7 +12,8 @@ namespace Homework2
         private string _password;
         private string _seatNumber;
 
-        Member(string username, string password)
+        
+        public Member(string username, string password)
         {
             setUsername(username);
             setPassword(password);

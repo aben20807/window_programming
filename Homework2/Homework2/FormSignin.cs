@@ -10,15 +10,19 @@ using System.Windows.Forms;
 
 namespace Homework2
 {
-    public partial class Form1 : Form
+    public partial class FormSignin : Form
     {
-        public Form1()
+        //public FormSignin formSignin = new FormSignin();
+        public FormUser formUser;// = new FormUser(this);
+        public FormSupervisor formSupervisor = new FormSupervisor();
+        List<Member> memberData = new List<Member>();
+        public FormSignin()
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormSignin_Load(object sender, EventArgs e)
         {
+            formUser = new FormUser(this);
             CenterToScreen();
             //button init
             Image imgSignup = Image.FromFile("../../pic/btn/btn_signUp.png");
@@ -43,6 +47,13 @@ namespace Homework2
             textboxPassword.Text = "password";
             textboxPassword.ForeColor = Color.Gray;
             textboxPassword.UseSystemPasswordChar = false;
+            //member data init
+            Member m1 = new Member("John", "123");
+            Member m2 = new Member("Ben", "456");
+            Member m3 = new Member("Eva", "789");
+            memberData.Add(m1);
+            memberData.Add(m2);
+            memberData.Add(m3);
         }
 
         private void textboxUsername_Leave(object sender, EventArgs e)
@@ -85,13 +96,21 @@ namespace Homework2
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            //Environment.Exit(0);
             Application.Exit();
+            Environment.Exit(0);
         }
 
         private void btnSignin_Click(object sender, EventArgs e)
         {
-
+            foreach(Member i in memberData)
+            {
+                if(i.getUsername() == textboxUsername.Text && i.getPassword() == textboxPassword.Text)
+                {
+                    formUser = new FormUser(this);
+                    formUser.Show();
+                    this.Hide();
+                }
+            }
         }
     }
 }

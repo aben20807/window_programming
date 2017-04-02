@@ -1,6 +1,6 @@
 ﻿namespace Homework2
 {
-    partial class Form1
+    partial class FormSignin
     {
         /// <summary>
         /// 設計工具所需的變數。
@@ -96,7 +96,7 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // Form1
+            // FormSignin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -107,9 +107,9 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSignup);
             this.Controls.Add(this.btnSignin);
-            this.Name = "Form1";
+            this.Name = "FormSignin";
             this.Text = "OuO movie";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.FormSignin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
