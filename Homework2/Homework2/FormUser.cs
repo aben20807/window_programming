@@ -94,7 +94,7 @@ namespace Homework2
         }
 
         private void FormUser_FormClosed(object sender, FormClosedEventArgs e)
-        {
+        {//close, delete this form and call parent form
             getParent().Show();
             this.Dispose();
         }
@@ -102,11 +102,27 @@ namespace Homework2
         private void btnFilm1_Click(object sender, EventArgs e)
         {
             Button thisFilm = (Button)sender;
-            Member.signinMember.setFilm((int)thisFilm.Name.ElementAt(thisFilm.Name.Length - 1)-'0');
-
-            panelSeat.Show();
-            panelFilm.Hide();
-            System.Diagnostics.Debug.WriteLine(Member.signinMember.getFilm());
+            int thisFilmNumber = (int)thisFilm.Name.ElementAt(thisFilm.Name.Length - 1) - '0';
+            if (Member.signinMember.getFilm() != -1 && Member.signinMember.getFilm() != thisFilmNumber)
+            {
+                DialogResult warning = MessageBox.Show("Has been chosen film, cancel last booking?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (warning == DialogResult.Yes)
+                {
+                    Member.signinMember.setFilm(-1);
+                    Member.signinMember.setSeatNumber(-1);
+                    panelSeat.Hide();
+                    panelFilm.Show();
+                }
+            }
+            else
+            {
+                Member.signinMember.setFilm(thisFilmNumber);
+                //chosen seat
+                panelSeat.Show();
+                panelFilm.Hide();
+                //System.Diagnostics.Debug.WriteLine(Member.signinMember.getFilm());
+            }
+            
         }
     }
 }
