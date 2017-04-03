@@ -82,13 +82,29 @@ namespace Homework2
                 if (i.getSeatNumber() != -1 && i.getFilm() == film)
                 {
                     seat[i.getSeatNumber()].BackColor = Color.Gray;
+                    //add tooltip
+                    ToolTip tooltip = new ToolTip();
+                    tooltip.IsBalloon = true;
+                    tooltip.SetToolTip(seat[i.getSeatNumber()], i.getUsername());
                     if (Member.signinMember != null && i.getUsername() == Member.signinMember.getUsername())
                     {
                         seat[i.getSeatNumber()].BackColor = Color.Red;
                     }
-                    System.Diagnostics.Debug.WriteLine(i.getSeatNumber());
+                    //System.Diagnostics.Debug.WriteLine(i.getSeatNumber());
                 }
             }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FormSupervisor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Member.signinMember = null;
+            getParent().Show();
+            this.Dispose();
         }
     }
 }

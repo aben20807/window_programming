@@ -123,14 +123,15 @@
             this.settingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(71, 23);
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.settingToolStripMenuItem.Text = "Setting";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // panelSeat
             // 
@@ -662,6 +663,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormSupervisor";
             this.Text = "FormSupervisor";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormSupervisor_FormClosed);
             this.Load += new System.EventHandler(this.FormSupervisor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

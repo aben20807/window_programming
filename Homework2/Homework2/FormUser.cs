@@ -153,7 +153,7 @@ namespace Homework2
                     {
                         seat[i.getSeatNumber()].BackColor = Color.Red;
                     }
-                    System.Diagnostics.Debug.WriteLine(i.getSeatNumber());
+                    //System.Diagnostics.Debug.WriteLine(i.getSeatNumber());
                 }
             }
         }
@@ -174,7 +174,7 @@ namespace Homework2
                     }
                     int thisSeatNumber;
                     int.TryParse(thisSeat.Name.Substring(6), out thisSeatNumber);
-                    System.Diagnostics.Debug.WriteLine(thisSeatNumber);
+                    //System.Diagnostics.Debug.WriteLine(thisSeatNumber);
                     Member.signinMember.setSeatNumber(thisSeatNumber);
                     thisSeat.BackColor = Color.Red;
                 }

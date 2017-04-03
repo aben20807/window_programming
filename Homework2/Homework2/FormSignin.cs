@@ -109,6 +109,12 @@ namespace Homework2
             {
                 signinUsername = "supervisor";
                 Member.signinMember = null;
+                textboxPassword.Text = "password";
+                textboxPassword.ForeColor = Color.Gray;
+                textboxPassword.UseSystemPasswordChar = false;
+                textboxUsername.Text = "username";
+                textboxUsername.ForeColor = Color.Gray;
+                //open form to manage
                 formSupervisor = new FormSupervisor(this);
                 formSupervisor.Show();
                 this.Hide();
