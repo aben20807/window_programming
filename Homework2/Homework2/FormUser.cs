@@ -60,11 +60,6 @@ namespace Homework2
 
             //seat init
             seatInForm = this.panelSeat.Controls.OfType<Button>().ToList();
-            foreach(Button i in seatInForm)
-            {
-                i.BackColor = Color.Green;
-                i.MouseDown += button0_MouseDown;
-            }
             seat[0] = button0;      seat[1] = button1;      seat[2] = button2;
             seat[3] = button3;      seat[4] = button4;      seat[5] = button5;
             seat[6] = button6;      seat[7] = button7;      seat[8] = button8;
@@ -79,20 +74,7 @@ namespace Homework2
             seat[33] = button33;    seat[34] = button34;    seat[35] = button35;
             seat[36] = button36;    seat[37] = button37;    seat[38] = button38;
             seat[39] = button39;    seat[40] = button40;    seat[41] = button41;
-
-            //member init
-            foreach (Member i in Member.memberData)
-            {
-                if(i.getSeatNumber() != -1)
-                {
-                    seat[i.getSeatNumber()].BackColor = Color.Gray;
-                    if (i.getUsername() == Member.signinMember.getUsername())
-                    {
-                        seat[i.getSeatNumber()].BackColor = Color.Red;
-                    }
-                    System.Diagnostics.Debug.WriteLine(i.getSeatNumber());
-                }
-            }
+            
             //page init
             panelSeat.Hide();
             panelFilm.Show();
@@ -148,6 +130,7 @@ namespace Homework2
                     Member.signinMember.setSeatNumber(-1);
                     panelSeat.Show();
                     panelFilm.Hide();
+                    changeSeatColor(thisFilmNumber);
                 }
             }
             else
@@ -156,12 +139,33 @@ namespace Homework2
                 //chosen seat
                 panelSeat.Show();
                 panelFilm.Hide();
+                changeSeatColor(thisFilmNumber);
                 //System.Diagnostics.Debug.WriteLine(Member.signinMember.getFilm());
             }
             
         }
-        private void button0_MouseDown(object sender, MouseEventArgs e)
+        private void changeSeatColor(int film)
         {
+            foreach (Button i in seatInForm)
+            {
+                i.BackColor = Color.Green;
+                i.MouseDown += button0_MouseDown;
+            }
+            foreach (Member i in Member.memberData)
+            {
+                if (i.getSeatNumber() != -1 && i.getFilm() == film)
+                {
+                    seat[i.getSeatNumber()].BackColor = Color.Gray;
+                    if (i.getUsername() == Member.signinMember.getUsername())
+                    {
+                        seat[i.getSeatNumber()].BackColor = Color.Red;
+                    }
+                    System.Diagnostics.Debug.WriteLine(i.getSeatNumber());
+                }
+            }
+        }
+        private void button0_MouseDown(object sender, MouseEventArgs e)
+        {//select seat
             Button thisSeat = (Button)sender;
             if (e.Button == MouseButtons.Left && thisSeat.BackColor == Color.Green)
             {
@@ -169,7 +173,7 @@ namespace Homework2
                 if (check == DialogResult.Yes)
                 {
                     foreach (Button i in seatInForm)
-                    {
+                    {//cancel other seat
                         if (i.BackColor == Color.Red)
                         {
                             i.BackColor = Color.Green;
