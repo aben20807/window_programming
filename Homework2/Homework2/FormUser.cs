@@ -60,15 +60,39 @@ namespace Homework2
 
             //seat init
             seatInForm = this.panelSeat.Controls.OfType<Button>().ToList();
-            int count = 0;
             foreach(Button i in seatInForm)
             {
-                seat[count++] = i;
+                i.BackColor = Color.Green;
                 i.MouseDown += button0_MouseDown;
-                //System.Diagnostics.Debug.WriteLine(count);
             }
+            seat[0] = button0;      seat[1] = button1;      seat[2] = button2;
+            seat[3] = button3;      seat[4] = button4;      seat[5] = button5;
+            seat[6] = button6;      seat[7] = button7;      seat[8] = button8;
+            seat[9] = button9;      seat[10] = button10;    seat[11] = button11;
+            seat[12] = button12;    seat[13] = button13;    seat[14] = button14;
+            seat[15] = button15;    seat[16] = button16;    seat[17] = button17;
+            seat[18] = button18;    seat[19] = button19;    seat[20] = button20;
+            seat[21] = button21;    seat[22] = button22;    seat[23] = button23;
+            seat[24] = button24;    seat[25] = button25;    seat[26] = button26;
+            seat[27] = button27;    seat[28] = button28;    seat[29] = button29;
+            seat[30] = button30;    seat[31] = button31;    seat[32] = button32;
+            seat[33] = button33;    seat[34] = button34;    seat[35] = button35;
+            seat[36] = button36;    seat[37] = button37;    seat[38] = button38;
+            seat[39] = button39;    seat[40] = button40;    seat[41] = button41;
+
             //member init
-            
+            foreach (Member i in Member.memberData)
+            {
+                if(i.getSeatNumber() != -1)
+                {
+                    seat[i.getSeatNumber()].BackColor = Color.Gray;
+                    if (i.getUsername() == Member.signinMember.getUsername())
+                    {
+                        seat[i.getSeatNumber()].BackColor = Color.Red;
+                    }
+                    System.Diagnostics.Debug.WriteLine(i.getSeatNumber());
+                }
+            }
             //page init
             panelSeat.Hide();
             panelFilm.Show();
@@ -139,7 +163,7 @@ namespace Homework2
         private void button0_MouseDown(object sender, MouseEventArgs e)
         {
             Button thisSeat = (Button)sender;
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left && thisSeat.BackColor == Color.Green)
             {
                 DialogResult check = MessageBox.Show("Are you sure to select this seat?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (check == DialogResult.Yes)
@@ -153,7 +177,7 @@ namespace Homework2
                     }
                     int thisSeatNumber;
                     int.TryParse(thisSeat.Name.Substring(6), out thisSeatNumber);
-                    //System.Diagnostics.Debug.WriteLine(thisSeatNumber);
+                    System.Diagnostics.Debug.WriteLine(thisSeatNumber);
                     Member.signinMember.setSeatNumber(thisSeatNumber);
                     thisSeat.BackColor = Color.Red;
                 }
@@ -163,7 +187,7 @@ namespace Homework2
                 DialogResult check = MessageBox.Show("Are you sure to cancel this seat?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (check == DialogResult.Yes)
                 {
-                    System.Diagnostics.Debug.WriteLine(-1);
+                    //System.Diagnostics.Debug.WriteLine(-1);
                     Member.signinMember.setSeatNumber(-1);
                     thisSeat.BackColor = Color.Green;
                 }
