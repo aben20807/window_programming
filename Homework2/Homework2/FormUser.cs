@@ -14,6 +14,7 @@ namespace Homework2
     {
         private FormSignin _parent;
         Button[] film = new Button[3];
+        List<Button> seatInForm;
         Button[] seat = new Button[42];
 
         public FormUser(FormSignin parent)
@@ -57,6 +58,17 @@ namespace Homework2
             btnFilm2.BackgroundImageLayout = ImageLayout.Zoom;
             btnFilm2.Cursor = Cursors.Hand;
 
+            //seat init
+            seatInForm = this.panelSeat.Controls.OfType<Button>().ToList();
+            int count = 0;
+            foreach(Button i in seatInForm)
+            {
+                seat[count++] = i;
+                i.MouseDown += button0_MouseDown;
+                //System.Diagnostics.Debug.WriteLine(count);
+            }
+            //member init
+            
             //page init
             panelSeat.Hide();
             panelFilm.Show();
@@ -76,7 +88,7 @@ namespace Homework2
 
         private void bookingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(Member.signinMember.getSeatNumber() == -1)
+            if(Member.signinMember.getSeatNumber() == -1 && panelSeat.Visible == true)
             {
                 DialogResult warning = MessageBox.Show("Not yet selected seat, cancel this booking?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if(warning == DialogResult.Yes)
@@ -110,8 +122,8 @@ namespace Homework2
                 {
                     Member.signinMember.setFilm(-1);
                     Member.signinMember.setSeatNumber(-1);
-                    panelSeat.Hide();
-                    panelFilm.Show();
+                    panelSeat.Show();
+                    panelFilm.Hide();
                 }
             }
             else
@@ -123,6 +135,39 @@ namespace Homework2
                 //System.Diagnostics.Debug.WriteLine(Member.signinMember.getFilm());
             }
             
+        }
+        private void button0_MouseDown(object sender, MouseEventArgs e)
+        {
+            Button thisSeat = (Button)sender;
+            if (e.Button == MouseButtons.Left)
+            {
+                DialogResult check = MessageBox.Show("Are you sure to select this seat?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (check == DialogResult.Yes)
+                {
+                    foreach (Button i in seatInForm)
+                    {
+                        if (i.BackColor == Color.Red)
+                        {
+                            i.BackColor = Color.Green;
+                        }
+                    }
+                    int thisSeatNumber;
+                    int.TryParse(thisSeat.Name.Substring(6), out thisSeatNumber);
+                    //System.Diagnostics.Debug.WriteLine(thisSeatNumber);
+                    Member.signinMember.setSeatNumber(thisSeatNumber);
+                    thisSeat.BackColor = Color.Red;
+                }
+            }
+            else if(e.Button == MouseButtons.Right && thisSeat.BackColor == Color.Red)
+            {
+                DialogResult check = MessageBox.Show("Are you sure to cancel this seat?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (check == DialogResult.Yes)
+                {
+                    System.Diagnostics.Debug.WriteLine(-1);
+                    Member.signinMember.setSeatNumber(-1);
+                    thisSeat.BackColor = Color.Green;
+                }
+            }
         }
     }
 }

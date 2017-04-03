@@ -616,6 +616,7 @@
             this.button0.Size = new System.Drawing.Size(59, 57);
             this.button0.TabIndex = 0;
             this.button0.UseVisualStyleBackColor = true;
+            this.button0.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button0_MouseDown);
             // 
             // panelFilm
             // 
@@ -678,8 +679,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 553);
-            this.Controls.Add(this.panelFilm);
             this.Controls.Add(this.panelSeat);
+            this.Controls.Add(this.panelFilm);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormUser";
