@@ -139,7 +139,7 @@ namespace Homework2
         {
             foreach (Button i in seatInForm)
             {
-                i.BackColor = Color.Green;
+                i.BackColor = Color.LightGreen;
             }
             foreach (Member i in Member.memberData)
             {
@@ -159,7 +159,7 @@ namespace Homework2
             Button thisSeat = (Button)sender;
             int thisSeatNumber;
             int.TryParse(thisSeat.Name.Substring(6), out thisSeatNumber);
-            if (e.Button == MouseButtons.Left && thisSeat.BackColor == Color.Green)
+            if (e.Button == MouseButtons.Left && thisSeat.BackColor == Color.LightGreen)
             {
                 if (Member.signinMember.getFilm() != -1 && Member.signinMember.getFilm() != thisFilmNumber)
                 {
@@ -182,7 +182,7 @@ namespace Homework2
                         {//cancel other seat
                             if (i.BackColor == Color.Red)
                             {
-                                i.BackColor = Color.Green;
+                                i.BackColor = Color.LightGreen;
                             }
                         }
                         //System.Diagnostics.Debug.WriteLine(thisSeatNumber);
@@ -202,7 +202,7 @@ namespace Homework2
                     //System.Diagnostics.Debug.WriteLine(-1);
                     Member.signinMember.setFilm(-1);
                     Member.signinMember.setSeatNumber(-1);
-                    thisSeat.BackColor = Color.Green;
+                    thisSeat.BackColor = Color.LightGreen;
                 }
             }
         }

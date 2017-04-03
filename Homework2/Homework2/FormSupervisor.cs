@@ -16,6 +16,7 @@ namespace Homework2
         Button[] film = new Button[3];
         List<Button> seatInForm;
         Button[] seat = new Button[42];
+        int thisFilmNumber;
         public FormSupervisor(FormSignin parent)
         {
             InitializeComponent();
@@ -62,20 +63,38 @@ namespace Homework2
         private void btnFilm0_Click(object sender, EventArgs e)
         {
             Button thisFilm = (Button)sender;
-            int thisFilmNumber = (int)thisFilm.Name.ElementAt(thisFilm.Name.Length - 1) - '0';
+            thisFilmNumber = (int)thisFilm.Name.ElementAt(thisFilm.Name.Length - 1) - '0';
             changeSeatColor(thisFilmNumber);
         }
 
         private void button0_MouseDown(object sender, MouseEventArgs e)
         {
-
+            Button thisSeat = (Button)sender;
+            if (thisSeat.BackColor == Color.Gray)
+            {
+                int thisSeatNumber;
+                int.TryParse(thisSeat.Name.Substring(6), out thisSeatNumber);
+                DialogResult warning = MessageBox.Show("Cancel this booking?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (warning == DialogResult.Yes)
+                {
+                    foreach(Member i in Member.memberData)
+                    {
+                        if(i.getFilm() == thisFilmNumber && i.getSeatNumber() == thisSeatNumber)
+                        {
+                            i.setFilm(-1);
+                            i.setSeatNumber(-1);
+                            thisSeat.BackColor = Color.LightGreen;
+                        }
+                    }
+                }
+            }
         }
 
         private void changeSeatColor(int film)
         {
             foreach (Button i in seatInForm)
             {
-                i.BackColor = Color.Green;
+                i.BackColor = Color.LightGreen;
             }
             foreach (Member i in Member.memberData)
             {
