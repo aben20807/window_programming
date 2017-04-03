@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;//hashSHA512
-//using System.Diagnostics;//debug
 
 namespace Homework2
 {
     class Member
     {
         public static List<Member> memberData = new List<Member>();
+        public static Member signinMember;
 
         private string _username;
         private string _password;
@@ -45,7 +45,7 @@ namespace Homework2
         public void setPassword(string password)
         {
             this._password = hashSHA512(password);
-            //Debug.WriteLine(this._password);
+            //System.Diagnostics.Debug.WriteLine(this._password);
         }
         public int getSeatNumber()
         {

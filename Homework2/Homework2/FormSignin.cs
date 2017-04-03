@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
 
 namespace Homework2
 {
@@ -15,6 +14,8 @@ namespace Homework2
     {
         public FormUser formUser;
         public FormSupervisor formSupervisor;
+        const string SUPERVISOR_USERNAME = "ADMIN";
+        const string SUPERVISOR_PASSWORD = "0000";
         public static string signinUsername = "";
         private bool isCapitalized = true;
         public FormSignin()
@@ -50,9 +51,9 @@ namespace Homework2
             textboxPassword.ForeColor = Color.Gray;
             textboxPassword.UseSystemPasswordChar = false;
             //member data init
-            Member m1 = new Member("John", "123");
-            Member m2 = new Member("Ben", "456");
-            Member m3 = new Member("Eva", "789");
+            Member m1 = new Member("JOHN", "123");
+            Member m2 = new Member("BEN", "456");
+            Member m3 = new Member("EVA", "789");
             Member.memberData.Add(m1);
             Member.memberData.Add(m2);
             Member.memberData.Add(m3);
@@ -104,13 +105,20 @@ namespace Homework2
 
         private void btnSignin_Click(object sender, EventArgs e)
         {
-            //if()
+            if(textboxUsername.Text == SUPERVISOR_USERNAME && textboxPassword.Text == SUPERVISOR_PASSWORD)
+            {
+                signinUsername = "supervisor";
+                formSupervisor = new FormSupervisor(this);
+                formSupervisor.Show();
+                this.Hide();
+            }
             foreach(Member i in Member.memberData)
             {
                 if(i.getUsername() == textboxUsername.Text && i.getPassword() == Member.hashSHA512(textboxPassword.Text))
                 {
                     //textBox init
                     signinUsername = textboxUsername.Text;
+                    Member.signinMember = i;
                     textboxPassword.Text = "password";
                     textboxPassword.ForeColor = Color.Gray;
                     textboxPassword.UseSystemPasswordChar = false;
@@ -126,14 +134,13 @@ namespace Homework2
 
         private void textboxUsername_TextChanged(object sender, EventArgs e)
         {
-            //Debug.WriteLine("C"+textboxUsername.Text.Length + "\n" + textboxUsername.Text);
+            //System.Diagnostics.Debug.WriteLine("C"+textboxUsername.Text.Length + "\n" + textboxUsername.Text);
             if (isCapitalized == false && textboxUsername.Text.Length > 0)
             {
                 textboxUsername.Text = "";
                 isCapitalized = true;
-                //Debug.WriteLine(isCapitalized.ToString()+textboxUsername.Text.ElementAt(textboxUsername.Text.Length - 1)+ l);
-                //textboxUsername.Text = textboxUsername.Text.Substring(0, textboxUsername.Text.Length - 1);//textboxUsername.Text.Remove(l-1);//
-                //Debug.WriteLine("D"+textboxUsername.Text.Length + "\n" + textboxUsername.Text);
+                //System.Diagnostics.Debug.WriteLine(isCapitalized.ToString()+textboxUsername.Text.ElementAt(textboxUsername.Text.Length - 1)+ l);
+                //System.Diagnostics.Debug.WriteLine("D"+textboxUsername.Text.Length + "\n" + textboxUsername.Text);
             }
         }
 
@@ -142,7 +149,7 @@ namespace Homework2
             if (e.KeyChar >= 'a' && e.KeyChar <= 'z')
             {
                 MessageBox.Show("Each letter of username is capitalized\nError for : "+ e.KeyChar, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //Debug.WriteLine(textboxUsername.Text.Length+"\n"+ textboxUsername.Text);
+                //System.Diagnostics.Debug.WriteLine(textboxUsername.Text.Length+"\n"+ textboxUsername.Text);
                 isCapitalized = false;
             }
             else
