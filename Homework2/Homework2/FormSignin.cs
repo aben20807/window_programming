@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Homework2
 {
@@ -15,6 +16,7 @@ namespace Homework2
         public FormUser formUser;
         public FormSupervisor formSupervisor;
         public static string signinUsername = "";
+        private bool isCapitalized = true;
         public FormSignin()
         {
             InitializeComponent();
@@ -119,6 +121,33 @@ namespace Homework2
                     formUser.Show();
                     this.Hide();
                 }
+            }
+        }
+
+        private void textboxUsername_TextChanged(object sender, EventArgs e)
+        {
+            //Debug.WriteLine("C"+textboxUsername.Text.Length + "\n" + textboxUsername.Text);
+            if (isCapitalized == false && textboxUsername.Text.Length > 0)
+            {
+                textboxUsername.Text = "";
+                isCapitalized = true;
+                //Debug.WriteLine(isCapitalized.ToString()+textboxUsername.Text.ElementAt(textboxUsername.Text.Length - 1)+ l);
+                //textboxUsername.Text = textboxUsername.Text.Substring(0, textboxUsername.Text.Length - 1);//textboxUsername.Text.Remove(l-1);//
+                //Debug.WriteLine("D"+textboxUsername.Text.Length + "\n" + textboxUsername.Text);
+            }
+        }
+
+        private void textboxUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 'a' && e.KeyChar <= 'z')
+            {
+                MessageBox.Show("Each letter of username is capitalized\nError for : "+ e.KeyChar, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //Debug.WriteLine(textboxUsername.Text.Length+"\n"+ textboxUsername.Text);
+                isCapitalized = false;
+            }
+            else
+            {
+                isCapitalized = true;
             }
         }
     }

@@ -56,7 +56,9 @@
             this.textboxUsername.Name = "textboxUsername";
             this.textboxUsername.Size = new System.Drawing.Size(321, 30);
             this.textboxUsername.TabIndex = 2;
+            this.textboxUsername.TextChanged += new System.EventHandler(this.textboxUsername_TextChanged);
             this.textboxUsername.Enter += new System.EventHandler(this.textboxUsername_Enter);
+            this.textboxUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxUsername_KeyPress);
             this.textboxUsername.Leave += new System.EventHandler(this.textboxUsername_Leave);
             // 
             // textboxPassword
