@@ -16,6 +16,7 @@ namespace Homework2
         Button[] film = new Button[3];
         List<Button> seatInForm;
         Button[] seat = new Button[42];
+        string[] filmName = new string[3];
         int thisFilmNumber;
 
         public FormUser(FormSignin parent)
@@ -40,24 +41,38 @@ namespace Homework2
             film[2] = btnFilm2;
             btnFilm1.Click += btnFilm1_Click;
             btnFilm2.Click += btnFilm1_Click;
+            filmName[0] = "A Silent Voice";
+            filmName[1] = "My Tomorrow, Your Yesterday";
+            filmName[2] = "Ghost in the Shell";
             //Film image init
-            Image imgFilm0 = Image.FromFile("../../pic/film/film1.jpg");
+            Image imgFilm0 = Image.FromFile("../../pic/film/film0.jpg");
             btnFilm0.Text = "";
             btnFilm0.BackgroundImage = imgFilm0;
             btnFilm0.BackgroundImageLayout = ImageLayout.Zoom;
             btnFilm0.Cursor = Cursors.Hand;
 
-            Image imgFilm1 = Image.FromFile("../../pic/film/film2.jpg");
+            Image imgFilm1 = Image.FromFile("../../pic/film/film1.jpg");
             btnFilm1.Text = "";
             btnFilm1.BackgroundImage = imgFilm1;
             btnFilm1.BackgroundImageLayout = ImageLayout.Zoom;
             btnFilm1.Cursor = Cursors.Hand;
 
-            Image imgFilm2 = Image.FromFile("../../pic/film/film3.jpg");
+            Image imgFilm2 = Image.FromFile("../../pic/film/film2.jpg");
             btnFilm2.Text = "";
             btnFilm2.BackgroundImage = imgFilm2;
             btnFilm2.BackgroundImageLayout = ImageLayout.Zoom;
             btnFilm2.Cursor = Cursors.Hand;
+
+            //trailer init
+            ToolTip tooltip0 = new ToolTip();
+            tooltip0.IsBalloon = true;
+            tooltip0.SetToolTip(labelFilm0, "Trailer in YouTube");
+            ToolTip tooltip1 = new ToolTip();
+            tooltip1.IsBalloon = true;
+            tooltip1.SetToolTip(labelFilm1, "Trailer in YouTube");
+            ToolTip tooltip2 = new ToolTip();
+            tooltip2.IsBalloon = true;
+            tooltip2.SetToolTip(labelFilm2, "Trailer in YouTube");
 
             //seat init
             seatInForm = this.panelSeat.Controls.OfType<Button>().ToList();
@@ -153,9 +168,9 @@ namespace Homework2
                     {
                         Member.signinMember.setFilm(thisFilmNumber);
                         Member.signinMember.setSeatNumber(thisSeatNumber);
-                        panelSeat.Show();
-                        panelFilm.Hide();
-                        changeSeatColor(thisFilmNumber);
+                        thisSeat.BackColor = Color.Red;
+                        MessageBox.Show("Your movie is " + filmName[thisFilmNumber] + "\nYour seat is "+ (thisSeatNumber/14+1) + " row from the top, "+ (thisSeatNumber%14+1) + " from the right",
+                            "Finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
@@ -174,6 +189,8 @@ namespace Homework2
                         Member.signinMember.setFilm(thisFilmNumber);
                         Member.signinMember.setSeatNumber(thisSeatNumber);
                         thisSeat.BackColor = Color.Red;
+                        MessageBox.Show("Your movie is " + filmName[thisFilmNumber] + "\nYour seat is " + (thisSeatNumber / 14 + 1) + " row from the top, " + (thisSeatNumber % 14 + 1) + " from the right",
+                            "Finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -183,10 +200,26 @@ namespace Homework2
                 if (check == DialogResult.Yes)
                 {
                     //System.Diagnostics.Debug.WriteLine(-1);
+                    Member.signinMember.setFilm(-1);
                     Member.signinMember.setSeatNumber(-1);
                     thisSeat.BackColor = Color.Green;
                 }
             }
+        }
+
+        private void labelFilm0_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=LxdyE4dp2lE");
+        }
+
+        private void labelFilm1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=_Jks1gExvOw");
+        }
+
+        private void labelFilm2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=ci4w2fQ0fv0");
         }
     }
 }

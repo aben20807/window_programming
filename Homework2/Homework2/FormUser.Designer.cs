@@ -82,6 +82,9 @@
             this.btnFilm2 = new System.Windows.Forms.Button();
             this.btnFilm0 = new System.Windows.Forms.Button();
             this.btnFilm1 = new System.Windows.Forms.Button();
+            this.labelFilm2 = new System.Windows.Forms.Label();
+            this.labelFilm1 = new System.Windows.Forms.Label();
+            this.labelFilm0 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panelSeat.SuspendLayout();
             this.panelFilm.SuspendLayout();
@@ -620,11 +623,14 @@
             // 
             // panelFilm
             // 
+            this.panelFilm.Controls.Add(this.labelFilm0);
+            this.panelFilm.Controls.Add(this.labelFilm1);
+            this.panelFilm.Controls.Add(this.labelFilm2);
             this.panelFilm.Controls.Add(this.labelHello);
             this.panelFilm.Controls.Add(this.btnFilm2);
             this.panelFilm.Controls.Add(this.btnFilm0);
             this.panelFilm.Controls.Add(this.btnFilm1);
-            this.panelFilm.Location = new System.Drawing.Point(0, 109);
+            this.panelFilm.Location = new System.Drawing.Point(12, 27);
             this.panelFilm.Name = "panelFilm";
             this.panelFilm.Size = new System.Drawing.Size(1012, 553);
             this.panelFilm.TabIndex = 40;
@@ -634,7 +640,7 @@
             this.labelHello.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelHello.AutoSize = true;
             this.labelHello.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelHello.Location = new System.Drawing.Point(451, 44);
+            this.labelHello.Location = new System.Drawing.Point(451, 16);
             this.labelHello.Name = "labelHello";
             this.labelHello.Size = new System.Drawing.Size(60, 22);
             this.labelHello.TabIndex = 2;
@@ -645,7 +651,7 @@
             this.btnFilm2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnFilm2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilm2.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnFilm2.Location = new System.Drawing.Point(692, 98);
+            this.btnFilm2.Location = new System.Drawing.Point(692, 59);
             this.btnFilm2.Name = "btnFilm2";
             this.btnFilm2.Size = new System.Drawing.Size(284, 394);
             this.btnFilm2.TabIndex = 1;
@@ -656,7 +662,7 @@
             this.btnFilm0.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnFilm0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilm0.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnFilm0.Location = new System.Drawing.Point(52, 98);
+            this.btnFilm0.Location = new System.Drawing.Point(52, 59);
             this.btnFilm0.Name = "btnFilm0";
             this.btnFilm0.Size = new System.Drawing.Size(284, 394);
             this.btnFilm0.TabIndex = 1;
@@ -668,19 +674,58 @@
             this.btnFilm1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnFilm1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilm1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnFilm1.Location = new System.Drawing.Point(370, 98);
+            this.btnFilm1.Location = new System.Drawing.Point(370, 59);
             this.btnFilm1.Name = "btnFilm1";
             this.btnFilm1.Size = new System.Drawing.Size(284, 394);
             this.btnFilm1.TabIndex = 1;
             this.btnFilm1.UseVisualStyleBackColor = true;
+            // 
+            // labelFilm2
+            // 
+            this.labelFilm2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelFilm2.AutoSize = true;
+            this.labelFilm2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelFilm2.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelFilm2.Location = new System.Drawing.Point(759, 478);
+            this.labelFilm2.Name = "labelFilm2";
+            this.labelFilm2.Size = new System.Drawing.Size(148, 22);
+            this.labelFilm2.TabIndex = 3;
+            this.labelFilm2.Text = "Ghost in the Shell";
+            this.labelFilm2.Click += new System.EventHandler(this.labelFilm2_Click);
+            // 
+            // labelFilm1
+            // 
+            this.labelFilm1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelFilm1.AutoSize = true;
+            this.labelFilm1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelFilm1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelFilm1.Location = new System.Drawing.Point(375, 478);
+            this.labelFilm1.Name = "labelFilm1";
+            this.labelFilm1.Size = new System.Drawing.Size(251, 22);
+            this.labelFilm1.TabIndex = 4;
+            this.labelFilm1.Text = "My Tomorrow, Your Yesterday";
+            this.labelFilm1.Click += new System.EventHandler(this.labelFilm1_Click);
+            // 
+            // labelFilm0
+            // 
+            this.labelFilm0.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelFilm0.AutoSize = true;
+            this.labelFilm0.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelFilm0.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelFilm0.Location = new System.Drawing.Point(134, 478);
+            this.labelFilm0.Name = "labelFilm0";
+            this.labelFilm0.Size = new System.Drawing.Size(118, 22);
+            this.labelFilm0.TabIndex = 5;
+            this.labelFilm0.Text = "A Silent Voice";
+            this.labelFilm0.Click += new System.EventHandler(this.labelFilm0_Click);
             // 
             // FormUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 553);
-            this.Controls.Add(this.panelSeat);
             this.Controls.Add(this.panelFilm);
+            this.Controls.Add(this.panelSeat);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormUser";
@@ -754,5 +799,8 @@
         private System.Windows.Forms.Button btnFilm2;
         private System.Windows.Forms.Button btnFilm0;
         private System.Windows.Forms.Button btnFilm1;
+        private System.Windows.Forms.Label labelFilm0;
+        private System.Windows.Forms.Label labelFilm1;
+        private System.Windows.Forms.Label labelFilm2;
     }
 }

@@ -86,10 +86,6 @@ namespace Homework2
                     ToolTip tooltip = new ToolTip();
                     tooltip.IsBalloon = true;
                     tooltip.SetToolTip(seat[i.getSeatNumber()], i.getUsername());
-                    if (Member.signinMember != null && i.getUsername() == Member.signinMember.getUsername())
-                    {
-                        seat[i.getSeatNumber()].BackColor = Color.Red;
-                    }
                     //System.Diagnostics.Debug.WriteLine(i.getSeatNumber());
                 }
             }
