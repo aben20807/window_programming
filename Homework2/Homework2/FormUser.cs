@@ -16,6 +16,7 @@ namespace Homework2
         Button[] film = new Button[3];
         List<Button> seatInForm;
         Button[] seat = new Button[42];
+        int thisFilmNumber;
 
         public FormUser(FormSignin parent)
         {//use constructor to store parent
@@ -114,29 +115,10 @@ namespace Homework2
         private void btnFilm1_Click(object sender, EventArgs e)
         {
             Button thisFilm = (Button)sender;
-            int thisFilmNumber = (int)thisFilm.Name.ElementAt(thisFilm.Name.Length - 1) - '0';
-            if (Member.signinMember.getFilm() != -1 && Member.signinMember.getFilm() != thisFilmNumber)
-            {
-                DialogResult warning = MessageBox.Show("Has been chosen film, cancel last booking?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (warning == DialogResult.Yes)
-                {
-                    Member.signinMember.setFilm(-1);
-                    Member.signinMember.setSeatNumber(-1);
-                    panelSeat.Show();
-                    panelFilm.Hide();
-                    changeSeatColor(thisFilmNumber);
-                }
-            }
-            else
-            {
-                Member.signinMember.setFilm(thisFilmNumber);
-                //chosen seat
-                panelSeat.Show();
-                panelFilm.Hide();
-                changeSeatColor(thisFilmNumber);
-                //System.Diagnostics.Debug.WriteLine(Member.signinMember.getFilm());
-            }
-            
+            thisFilmNumber = (int)thisFilm.Name.ElementAt(thisFilm.Name.Length - 1) - '0';
+            changeSeatColor(thisFilmNumber);
+            panelSeat.Show();
+            panelFilm.Hide();
         }
         private void changeSeatColor(int film)
         {
@@ -160,23 +142,39 @@ namespace Homework2
         private void button0_MouseDown(object sender, MouseEventArgs e)
         {//select seat
             Button thisSeat = (Button)sender;
+            int thisSeatNumber;
+            int.TryParse(thisSeat.Name.Substring(6), out thisSeatNumber);
             if (e.Button == MouseButtons.Left && thisSeat.BackColor == Color.Green)
             {
-                DialogResult check = MessageBox.Show("Are you sure to select this seat?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (check == DialogResult.Yes)
+                if (Member.signinMember.getFilm() != -1 && Member.signinMember.getFilm() != thisFilmNumber)
                 {
-                    foreach (Button i in seatInForm)
-                    {//cancel other seat
-                        if (i.BackColor == Color.Red)
-                        {
-                            i.BackColor = Color.Green;
-                        }
+                    DialogResult warning = MessageBox.Show("Has been chosen film, cancel last booking?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (warning == DialogResult.Yes)
+                    {
+                        Member.signinMember.setFilm(thisFilmNumber);
+                        Member.signinMember.setSeatNumber(thisSeatNumber);
+                        panelSeat.Show();
+                        panelFilm.Hide();
+                        changeSeatColor(thisFilmNumber);
                     }
-                    int thisSeatNumber;
-                    int.TryParse(thisSeat.Name.Substring(6), out thisSeatNumber);
-                    //System.Diagnostics.Debug.WriteLine(thisSeatNumber);
-                    Member.signinMember.setSeatNumber(thisSeatNumber);
-                    thisSeat.BackColor = Color.Red;
+                }
+                else
+                {
+                    DialogResult check = MessageBox.Show("Are you sure to select this seat?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (check == DialogResult.Yes)
+                    {
+                        foreach (Button i in seatInForm)
+                        {//cancel other seat
+                            if (i.BackColor == Color.Red)
+                            {
+                                i.BackColor = Color.Green;
+                            }
+                        }
+                        //System.Diagnostics.Debug.WriteLine(thisSeatNumber);
+                        Member.signinMember.setFilm(thisFilmNumber);
+                        Member.signinMember.setSeatNumber(thisSeatNumber);
+                        thisSeat.BackColor = Color.Red;
+                    }
                 }
             }
             else if(e.Button == MouseButtons.Right && thisSeat.BackColor == Color.Red)
