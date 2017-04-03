@@ -95,7 +95,7 @@
             this.settingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1012, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1012, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -104,7 +104,7 @@
             this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
             this.bookingToolStripMenuItem.ShortcutKeyDisplayString = "";
             this.bookingToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(79, 23);
+            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.bookingToolStripMenuItem.Text = "Booking";
             this.bookingToolStripMenuItem.Click += new System.EventHandler(this.bookingToolStripMenuItem_Click);
             // 
@@ -115,7 +115,7 @@
             this.exitToolStripMenuItem});
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
             this.settingToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(71, 23);
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.settingToolStripMenuItem.Text = "Setting";
             // 
             // accountManagementToolStripMenuItem
@@ -132,7 +132,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(292, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Text = "Exit (Logout)";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // panelSeat

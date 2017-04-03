@@ -75,6 +75,7 @@ namespace Homework2
         private void FormUser_FormClosed(object sender, FormClosedEventArgs e)
         {
             getParent().Show();
+            this.Dispose();
         }
     }
 }

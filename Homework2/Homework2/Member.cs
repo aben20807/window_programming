@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;//hashSHA512
-using System.Diagnostics;//debug
-using System.Windows.Forms;//MessageBox
+//using System.Diagnostics;//debug
 
 namespace Homework2
 {
@@ -46,7 +45,7 @@ namespace Homework2
         public void setPassword(string password)
         {
             this._password = hashSHA512(password);
-            Debug.WriteLine(this._password);
+            //Debug.WriteLine(this._password);
         }
         public int getSeatNumber()
         {

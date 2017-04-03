@@ -14,7 +14,6 @@ namespace Homework2
     {
         public FormUser formUser;
         public FormSupervisor formSupervisor;
-        //public static List<Member> memberData = new List<Member>();
         public static string signinUsername = "";
         public FormSignin()
         {
@@ -22,8 +21,8 @@ namespace Homework2
         }
         private void FormSignin_Load(object sender, EventArgs e)
         {
-            formUser = new FormUser(this);
-            formSupervisor = new FormSupervisor(this);
+            //
+            signinUsername = "";
             CenterToScreen();
             //button init
             Image imgSignup = Image.FromFile("../../pic/btn/btn_signUp.png");
@@ -103,6 +102,7 @@ namespace Homework2
 
         private void btnSignin_Click(object sender, EventArgs e)
         {
+            //if()
             foreach(Member i in Member.memberData)
             {
                 if(i.getUsername() == textboxUsername.Text && i.getPassword() == Member.hashSHA512(textboxPassword.Text))
@@ -115,7 +115,6 @@ namespace Homework2
                     textboxUsername.Text = "username";
                     textboxUsername.ForeColor = Color.Gray;
                     //open form to book film
-                    formUser.Dispose();
                     formUser = new FormUser(this);
                     formUser.Show();
                     this.Hide();
