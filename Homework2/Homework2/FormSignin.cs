@@ -119,24 +119,34 @@ namespace Homework2
                 formSupervisor.Show();
                 this.Hide();
             }
-            foreach(Member i in Member.memberData)
+            else
             {
-                if(i.getUsername() == textboxUsername.Text && i.getPassword() == Member.hashSHA512(textboxPassword.Text))
+                bool isFind = false;
+                foreach (Member i in Member.memberData)
                 {
-                    //textBox init
-                    signinUsername = textboxUsername.Text;
-                    Member.signinMember = i;
-                    textboxPassword.Text = "password";
-                    textboxPassword.ForeColor = Color.Gray;
-                    textboxPassword.UseSystemPasswordChar = false;
-                    textboxUsername.Text = "username";
-                    textboxUsername.ForeColor = Color.Gray;
-                    //open form to book film
-                    formUser = new FormUser(this);
-                    formUser.Show();
-                    this.Hide();
+                    if (i.getUsername() == textboxUsername.Text && i.getPassword() == Member.hashSHA512(textboxPassword.Text))
+                    {
+                        //textBox init
+                        isFind = true;
+                        signinUsername = textboxUsername.Text;
+                        Member.signinMember = i;
+                        textboxPassword.Text = "password";
+                        textboxPassword.ForeColor = Color.Gray;
+                        textboxPassword.UseSystemPasswordChar = false;
+                        textboxUsername.Text = "username";
+                        textboxUsername.ForeColor = Color.Gray;
+                        //open form to book film
+                        formUser = new FormUser(this);
+                        formUser.Show();
+                        this.Hide();
+                    }
+                }
+                if(isFind == false)
+                {
+                    MessageBox.Show("Something wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            
         }
 
         private void textboxUsername_TextChanged(object sender, EventArgs e)

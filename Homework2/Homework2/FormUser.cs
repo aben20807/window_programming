@@ -16,7 +16,7 @@ namespace Homework2
         Button[] film = new Button[3];
         List<Button> seatInForm;
         Button[] seat = new Button[42];
-        string[] filmName = new string[3];
+        public static string[] filmName = new string[3];
         int thisFilmNumber;
 
         public FormUser(FormSignin parent)
@@ -89,6 +89,12 @@ namespace Homework2
             panelFilm.Show();
             //Hello
             labelHello.Text = "Hello, " + FormSignin.signinUsername;
+            //Notification
+            if(Member.signinMember.getNotification() != "")
+            {
+                MessageBox.Show(Member.signinMember.getNotification(), "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Member.signinMember.setNotification("");//clear notification
+            }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,7 +104,9 @@ namespace Homework2
 
         private void accountManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            FormAccountManagement formAccountManagement = new FormAccountManagement(this);
+            formAccountManagement.Show();
+            this.Hide();
         }
 
         private void bookingToolStripMenuItem_Click(object sender, EventArgs e)

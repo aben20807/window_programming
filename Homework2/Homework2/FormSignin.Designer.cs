@@ -110,7 +110,7 @@
             this.Controls.Add(this.btnSignup);
             this.Controls.Add(this.btnSignin);
             this.Name = "FormSignin";
-            this.Text = "OuO movie";
+            this.Text = "OuO Film";
             this.Load += new System.EventHandler(this.FormSignin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

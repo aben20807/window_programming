@@ -16,6 +16,7 @@ namespace Homework2
         private string _password;
         private int _seatNumber;
         private int _film;
+        private string _notification;
         
         public Member(string username, string password)
         {
@@ -23,6 +24,7 @@ namespace Homework2
             setPassword(password);
             setSeatNumber(-1);
             setFilm(-1);
+            setNotification("");
         }
 
         public static string hashSHA512(string password)
@@ -62,6 +64,14 @@ namespace Homework2
         public void setFilm(int film)
         {
             this._film = film;
+        }
+        public string getNotification()
+        {
+            return this._notification;
+        }
+        public void setNotification(string notification)
+        {
+            this._notification = notification;
         }
     }
 }

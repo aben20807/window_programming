@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAccountManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAccountManagement.Designer.cs">
+      <DependentUpon>FormAccountManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSignin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="Member.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAccountManagement.resx">
+      <DependentUpon>FormAccountManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSignin.resx">
       <DependentUpon>FormSignin.cs</DependentUpon>
     </EmbeddedResource>

@@ -83,6 +83,7 @@ namespace Homework2
                         {
                             i.setFilm(-1);
                             i.setSeatNumber(-1);
+                            i.setNotification("Your movie " + FormUser.filmName[thisFilmNumber] + "\nand seat is " + (thisSeatNumber / 14 + 1) + " row from the top, " + (thisSeatNumber % 14 + 1) + " from the right\nhad been cancelled. Please check.");
                             thisSeat.BackColor = Color.LightGreen;
                         }
                     }
