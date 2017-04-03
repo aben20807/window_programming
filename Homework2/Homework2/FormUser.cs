@@ -106,6 +106,7 @@ namespace Homework2
 
         private void FormUser_FormClosed(object sender, FormClosedEventArgs e)
         {//close, delete this form and call parent form
+            Member.signinMember = null;
             getParent().Show();
             this.Dispose();
         }
@@ -148,7 +149,7 @@ namespace Homework2
                 if (i.getSeatNumber() != -1 && i.getFilm() == film)
                 {
                     seat[i.getSeatNumber()].BackColor = Color.Gray;
-                    if (i.getUsername() == Member.signinMember.getUsername())
+                    if (Member.signinMember != null && i.getUsername() == Member.signinMember.getUsername())
                     {
                         seat[i.getSeatNumber()].BackColor = Color.Red;
                     }

@@ -108,6 +108,7 @@ namespace Homework2
             if(textboxUsername.Text == SUPERVISOR_USERNAME && textboxPassword.Text == SUPERVISOR_PASSWORD)
             {
                 signinUsername = "supervisor";
+                Member.signinMember = null;
                 formSupervisor = new FormSupervisor(this);
                 formSupervisor.Show();
                 this.Hide();

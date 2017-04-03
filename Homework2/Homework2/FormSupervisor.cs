@@ -30,6 +30,7 @@ namespace Homework2
         {
             CenterToScreen();
             panelSeat.Dock = DockStyle.Fill;
+            
 
             //Film btn init
             film[0] = btnFilm0;
@@ -45,7 +46,7 @@ namespace Homework2
                 Button i = seatInForm.ElementAt(index);
                 if (i.Name == "btnFilm0" || i.Name == "btnFilm1" || i.Name == "btnFilm2")
                 {
-                    seatInForm.Remove(i);
+                    seatInForm.RemoveAt(index);
                     index--;
                     continue;
                 }
@@ -55,6 +56,7 @@ namespace Homework2
                 System.Diagnostics.Debug.WriteLine(seatNumber + "=" + i.Name);
                 i.MouseDown += button0_MouseDown;
             }
+            changeSeatColor(0);
         }
 
         private void btnFilm0_Click(object sender, EventArgs e)
@@ -80,7 +82,7 @@ namespace Homework2
                 if (i.getSeatNumber() != -1 && i.getFilm() == film)
                 {
                     seat[i.getSeatNumber()].BackColor = Color.Gray;
-                    if (i.getUsername() == Member.signinMember.getUsername())
+                    if (Member.signinMember != null && i.getUsername() == Member.signinMember.getUsername())
                     {
                         seat[i.getSeatNumber()].BackColor = Color.Red;
                     }
