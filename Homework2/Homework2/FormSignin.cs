@@ -13,7 +13,7 @@ namespace Homework2
     public partial class FormSignin : Form
     {
         public FormUser formUser;
-        public FormSupervisor formSupervisor = new FormSupervisor();
+        public FormSupervisor formSupervisor;
         //public static List<Member> memberData = new List<Member>();
         public static string signinUsername = "";
         public FormSignin()
@@ -23,6 +23,7 @@ namespace Homework2
         private void FormSignin_Load(object sender, EventArgs e)
         {
             formUser = new FormUser(this);
+            formSupervisor = new FormSupervisor(this);
             CenterToScreen();
             //button init
             Image imgSignup = Image.FromFile("../../pic/btn/btn_signUp.png");
@@ -104,7 +105,7 @@ namespace Homework2
         {
             foreach(Member i in Member.memberData)
             {
-                if(i.getUsername() == textboxUsername.Text && i.getPassword() == textboxPassword.Text)
+                if(i.getUsername() == textboxUsername.Text && i.getPassword() == Member.hashSHA512(textboxPassword.Text))
                 {
                     //textBox init
                     signinUsername = textboxUsername.Text;

@@ -13,10 +13,6 @@ namespace Homework2
     public partial class FormUser : Form
     {
         private FormSignin _parent;
-        public FormUser()
-        {
-            InitializeComponent();
-        }
 
         public FormUser(FormSignin parent)
         {//use constructor to store parent

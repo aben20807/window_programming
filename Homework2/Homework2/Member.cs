@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;//hashSHA512
+using System.Diagnostics;//debug
+using System.Windows.Forms;//MessageBox
 
 namespace Homework2
 {
@@ -12,15 +15,22 @@ namespace Homework2
 
         private string _username;
         private string _password;
-        private string _seatNumber;
-
+        private int _seatNumber;
+        private int _film;
         
         public Member(string username, string password)
         {
             setUsername(username);
             setPassword(password);
+            setSeatNumber(-1);
+            setFilm(-1);
         }
 
+        public static string hashSHA512(string password)
+        {
+            SHA512 sha512 = new SHA512CryptoServiceProvider();
+            return Convert.ToBase64String(sha512.ComputeHash(Encoding.Default.GetBytes(password)));
+        }
         public string getUsername()
         {
             return this._username;
@@ -35,15 +45,24 @@ namespace Homework2
         }
         public void setPassword(string password)
         {
-            this._password = password;
+            this._password = hashSHA512(password);
+            Debug.WriteLine(this._password);
         }
-        public string getSeatNumber()
+        public int getSeatNumber()
         {
             return this._seatNumber;
         }
-        public void setSeatNumber(string seatNumber)
+        public void setSeatNumber(int seatNumber)
         {
             this._seatNumber = seatNumber;
+        }
+        public int getFilm()
+        {
+            return this._film;
+        }
+        public void setFilm(int film)
+        {
+            this._film = film;
         }
     }
 }

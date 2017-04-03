@@ -13,10 +13,6 @@ namespace Homework2
     public partial class FormSupervisor : Form
     {
         private FormSignin _parent;
-        public FormSupervisor()
-        {
-            InitializeComponent();
-        }
         public FormSupervisor(FormSignin parent)
         {
             InitializeComponent();
