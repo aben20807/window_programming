@@ -14,7 +14,11 @@ namespace Homework2
     {
         private Form _parent;
         Dictionary<string, string> initString = new Dictionary<string, string>();
-            
+
+        public FormAccountManagement()
+        {
+            InitializeComponent();
+        }
         public FormAccountManagement(Form parent)
         {
             InitializeComponent();
@@ -100,6 +104,28 @@ namespace Homework2
             else
             {
                 MessageBox.Show("Something wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult warning = MessageBox.Show("Delete this account?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (warning == DialogResult.Yes)
+            {
+                Member.signinMember.setFilm(-1);
+                Member.signinMember.setSeatNumber(-1);
+                for(int index = 0; index < Member.memberData.Count; index++)
+                {
+                    if(Member.memberData.ElementAt(index) == Member.signinMember)
+                    {
+                        Member.memberData.RemoveAt(index);
+                        break;
+                    }
+                }
+                Member.signinMember = null;
+                MessageBox.Show("Delete success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                getParent().Close();
             }
         }
     }
