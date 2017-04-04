@@ -81,6 +81,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button0 = new System.Windows.Forms.Button();
+            this.labelPlaying = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panelSeat.SuspendLayout();
             this.SuspendLayout();
@@ -103,7 +104,7 @@
             this.bookingManagementToolStripMenuItem,
             this.accountManagementToolStripMenuItem});
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
-            this.managementToolStripMenuItem.Size = new System.Drawing.Size(114, 23);
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
             this.managementToolStripMenuItem.Text = "Management";
             // 
             // bookingManagementToolStripMenuItem
@@ -123,7 +124,7 @@
             this.settingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(71, 23);
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.settingToolStripMenuItem.Text = "Setting";
             // 
             // exitToolStripMenuItem
@@ -135,6 +136,7 @@
             // 
             // panelSeat
             // 
+            this.panelSeat.Controls.Add(this.labelPlaying);
             this.panelSeat.Controls.Add(this.btnFilm2);
             this.panelSeat.Controls.Add(this.btnFilm1);
             this.panelSeat.Controls.Add(this.btnFilm0);
@@ -653,6 +655,18 @@
             this.button0.UseVisualStyleBackColor = true;
             this.button0.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button0_MouseDown);
             // 
+            // labelPlaying
+            // 
+            this.labelPlaying.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelPlaying.AutoSize = true;
+            this.labelPlaying.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelPlaying.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelPlaying.Location = new System.Drawing.Point(558, 38);
+            this.labelPlaying.Name = "labelPlaying";
+            this.labelPlaying.Size = new System.Drawing.Size(75, 22);
+            this.labelPlaying.TabIndex = 42;
+            this.labelPlaying.Text = "Playing :";
+            // 
             // FormSupervisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -729,5 +743,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button0;
+        private System.Windows.Forms.Label labelPlaying;
     }
 }

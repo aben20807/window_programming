@@ -40,6 +40,10 @@ namespace Homework2
             btnFilm1.Click += btnFilm0_Click;
             btnFilm2.Click += btnFilm0_Click;
 
+            FormUser.filmName[0] = "A Silent Voice";
+            FormUser.filmName[1] = "My Tomorrow, Your Yesterday";
+            FormUser.filmName[2] = "Ghost in the Shell";
+
             //seat init
             seatInForm = this.panelSeat.Controls.OfType<Button>().ToList();
             for(int index = 0; index < seatInForm.Count(); index++)
@@ -93,6 +97,7 @@ namespace Homework2
 
         private void changeSeatColor(int film)
         {
+            labelPlaying.Text = "Playing : " + FormUser.filmName[film];
             foreach (Button i in seatInForm)
             {
                 i.BackColor = Color.LightGreen;

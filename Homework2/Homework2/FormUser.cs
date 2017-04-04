@@ -44,6 +44,7 @@ namespace Homework2
             filmName[0] = "A Silent Voice";
             filmName[1] = "My Tomorrow, Your Yesterday";
             filmName[2] = "Ghost in the Shell";
+
             //Film image init
             Image imgFilm0 = Image.FromFile("../../pic/film/film0.jpg");
             btnFilm0.Text = "";
