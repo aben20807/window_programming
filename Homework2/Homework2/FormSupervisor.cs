@@ -58,7 +58,7 @@ namespace Homework2
                 int seatNumber;
                 int.TryParse(i.Name.Substring(6), out seatNumber);
                 seat[seatNumber] = i;
-                System.Diagnostics.Debug.WriteLine(seatNumber + "=" + i.Name);
+                //System.Diagnostics.Debug.WriteLine(seatNumber + "=" + i.Name);
                 i.MouseDown += button0_MouseDown;
             }
             changeSeatColor(0);
@@ -126,6 +126,11 @@ namespace Homework2
             Member.signinMember = null;
             getParent().Show();
             this.Dispose();
+        }
+
+        private void bookingManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelSeat.Show();
         }
     }
 }

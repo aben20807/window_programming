@@ -58,6 +58,12 @@
     <Compile Include="FormSignin.Designer.cs">
       <DependentUpon>FormSignin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSignup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSignup.Designer.cs">
+      <DependentUpon>FormSignup.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSupervisor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSignin.resx">
       <DependentUpon>FormSignin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSignup.resx">
+      <DependentUpon>FormSignup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSupervisor.resx">
       <DependentUpon>FormSupervisor.cs</DependentUpon>

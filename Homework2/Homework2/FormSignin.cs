@@ -14,6 +14,7 @@ namespace Homework2
     {
         public FormUser formUser;
         public FormSupervisor formSupervisor;
+        public FormSignup formSignup;
         const string SUPERVISOR_USERNAME = "ADMIN";
         const string SUPERVISOR_PASSWORD = "0000";
         public static string signinUsername = "";
@@ -173,6 +174,13 @@ namespace Homework2
             {
                 isCapitalized = true;
             }
+        }
+
+        private void btnSignup_Click(object sender, EventArgs e)
+        {
+            formSignup = new FormSignup(this);
+            formSignup.Show();
+            this.Hide();
         }
     }
 }

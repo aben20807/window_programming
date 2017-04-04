@@ -31,7 +31,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookingManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSeat = new System.Windows.Forms.Panel();
@@ -94,15 +93,14 @@
             this.settingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1012, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1012, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // managementToolStripMenuItem
             // 
             this.managementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bookingManagementToolStripMenuItem,
-            this.accountManagementToolStripMenuItem});
+            this.bookingManagementToolStripMenuItem});
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
             this.managementToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
             this.managementToolStripMenuItem.Text = "Management";
@@ -112,12 +110,7 @@
             this.bookingManagementToolStripMenuItem.Name = "bookingManagementToolStripMenuItem";
             this.bookingManagementToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.bookingManagementToolStripMenuItem.Text = "Booking Management";
-            // 
-            // accountManagementToolStripMenuItem
-            // 
-            this.accountManagementToolStripMenuItem.Name = "accountManagementToolStripMenuItem";
-            this.accountManagementToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
-            this.accountManagementToolStripMenuItem.Text = "Account Management";
+            this.bookingManagementToolStripMenuItem.Click += new System.EventHandler(this.bookingManagementToolStripMenuItem_Click);
             // 
             // settingToolStripMenuItem
             // 
@@ -693,7 +686,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem managementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookingManagementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem accountManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Panel panelSeat;
