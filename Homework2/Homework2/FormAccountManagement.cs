@@ -14,11 +14,7 @@ namespace Homework2
     {
         private Form _parent;
         Dictionary<string, string> initString = new Dictionary<string, string>();
-
-        public FormAccountManagement()
-        {
-            InitializeComponent();
-        }
+        
         public FormAccountManagement(Form parent)
         {
             InitializeComponent();
@@ -50,14 +46,14 @@ namespace Homework2
             textBoxNew0.Text = "new password";
             textBoxNew0.ForeColor = Color.Gray;
             textBoxNew0.UseSystemPasswordChar = false;
-            textBoxNew0.Leave += textBoxOld_Leave;
-            textBoxNew0.Enter += textBoxOld_Enter;
+            textBoxNew0.Leave += textBoxOld_Leave;//textBox share method
+            textBoxNew0.Enter += textBoxOld_Enter;//textBox share method
 
             textBoxNew1.Text = "confirm new password";
             textBoxNew1.ForeColor = Color.Gray;
             textBoxNew1.UseSystemPasswordChar = false;
-            textBoxNew1.Leave += textBoxOld_Leave;
-            textBoxNew1.Enter += textBoxOld_Enter;
+            textBoxNew1.Leave += textBoxOld_Leave;//textBox share method
+            textBoxNew1.Enter += textBoxOld_Enter;//textBox share method
         }
 
         private void textBoxOld_Leave(object sender, EventArgs e)
@@ -66,7 +62,7 @@ namespace Homework2
             if (thisTextBox.Text == "")
             {
                 foreach (var OneItem in initString)
-                {
+                {//find init string
                     if(OneItem.Key == thisTextBox.Name)
                     {
                         thisTextBox.Text = OneItem.Value;
@@ -89,7 +85,7 @@ namespace Homework2
         }
 
         private void FormAccountManagement_FormClosed(object sender, FormClosedEventArgs e)
-        {
+        {//show parent after closing
             getParent().Show();
             this.Dispose();
         }
@@ -97,9 +93,10 @@ namespace Homework2
         private void btnSave_Click(object sender, EventArgs e)
         {
             if(Member.hashSHA512(textBoxOld.Text) == Member.signinMember.getPassword() && textBoxNew0.Text == textBoxNew1.Text)
-            {
+            {//modify password
                 Member.signinMember.setPassword(textBoxNew1.Text);
                 MessageBox.Show("Save success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             else
             {
@@ -108,7 +105,7 @@ namespace Homework2
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
-        {
+        {//delete account
             DialogResult warning = MessageBox.Show("Delete this account?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (warning == DialogResult.Yes)
             {

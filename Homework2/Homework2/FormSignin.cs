@@ -25,7 +25,6 @@ namespace Homework2
         }
         private void FormSignin_Load(object sender, EventArgs e)
         {
-            //
             signinUsername = "";
             CenterToScreen();
             //button init
@@ -52,12 +51,9 @@ namespace Homework2
             textboxPassword.ForeColor = Color.Gray;
             textboxPassword.UseSystemPasswordChar = false;
             //member data init
-            Member m1 = new Member("JOHN", "123");
-            Member m2 = new Member("BEN", "456");
-            Member m3 = new Member("EVA", "789");
-            Member.memberData.Add(m1);
-            Member.memberData.Add(m2);
-            Member.memberData.Add(m3);
+            Member.memberData.Add(new Member("TOM", "123"));
+            Member.memberData.Add(new Member("BEN", "456"));
+            Member.memberData.Add(new Member("EVA", "789"));
         }
 
         private void textboxUsername_Leave(object sender, EventArgs e)
@@ -100,14 +96,13 @@ namespace Homework2
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-            Environment.Exit(0);
+            this.Close();
         }
 
         private void btnSignin_Click(object sender, EventArgs e)
         {
             if(textboxUsername.Text == SUPERVISOR_USERNAME && textboxPassword.Text == SUPERVISOR_PASSWORD)
-            {
+            {//sign in as supervisor
                 signinUsername = "supervisor";
                 Member.signinMember = null;
                 textboxPassword.Text = "password";
@@ -124,7 +119,7 @@ namespace Homework2
             {
                 bool isFind = false;
                 foreach (Member i in Member.memberData)
-                {
+                {//find member
                     if (i.getUsername() == textboxUsername.Text && i.getPassword() == Member.hashSHA512(textboxPassword.Text))
                     {
                         //textBox init
@@ -165,7 +160,7 @@ namespace Homework2
         private void textboxUsername_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar >= 'a' && e.KeyChar <= 'z')
-            {
+            {//detect if press a~z
                 MessageBox.Show("Each letter of username is capitalized\nError for : "+ e.KeyChar, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //System.Diagnostics.Debug.WriteLine(textboxUsername.Text.Length+"\n"+ textboxUsername.Text);
                 isCapitalized = false;
@@ -181,6 +176,13 @@ namespace Homework2
             formSignup = new FormSignup(this);
             formSignup.Show();
             this.Hide();
+        }
+
+        private void FormSignin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //exit this program
+            Application.Exit();
+            Environment.Exit(0);
         }
     }
 }

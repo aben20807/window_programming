@@ -112,6 +112,7 @@
             this.Controls.Add(this.btnSignin);
             this.Name = "FormSignin";
             this.Text = "OuO Film";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormSignin_FormClosed);
             this.Load += new System.EventHandler(this.FormSignin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

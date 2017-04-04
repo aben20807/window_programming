@@ -134,6 +134,10 @@ namespace Homework2
                 MessageBox.Show("This username has existed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textboxUsername.Text = "";
             }
+            else if(textboxUsername.Text == "username" || textboxPassword.Text == "password")
+            {
+                MessageBox.Show("Something wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 Member.memberData.Add(new Member(textboxUsername.Text, textboxPassword.Text));

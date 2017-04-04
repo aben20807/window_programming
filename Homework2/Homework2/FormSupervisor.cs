@@ -32,7 +32,6 @@ namespace Homework2
             CenterToScreen();
             panelSeat.Dock = DockStyle.Fill;
             
-
             //Film btn init
             film[0] = btnFilm0;
             film[1] = btnFilm1;
