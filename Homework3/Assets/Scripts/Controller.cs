@@ -55,10 +55,11 @@ public class Controller : MonoBehaviour {
             }
             if (Input.GetKeyDown(KeyCode.X))
             {
-                if (bullet != null)
+                if (bullet1 != null)
                 {
-                    GameObject new_bullet = Instantiate(bullet);
-
+                    GameObject new_bullet = Instantiate(bullet1);
+                    new_bullet.GetComponent<MeshRenderer>().material.color = Color.yellow;
+                    new_bullet.GetComponent<Transform>().localScale = 2 * Vector3.one;
                     new_bullet.transform.localPosition = transform.position + 2 * Vector3.right;
                     new_bullet.GetComponent<Rigidbody>().velocity = shooting_speed * Vector3.right;
 
@@ -67,12 +68,12 @@ public class Controller : MonoBehaviour {
             }
             if (Input.GetKey(KeyCode.C))
             {
-                if (bullet != null)
+                if (bullet2 != null)
                 {
-                    GameObject new_bullet = Instantiate(bullet);
+                    GameObject new_bullet = Instantiate(bullet2);
 
                     new_bullet.transform.localPosition = transform.position + 2 * Vector3.right;
-                    new_bullet.GetComponent<Rigidbody>().velocity = shooting_speed * Vector3.right;
+                    new_bullet.GetComponent<Rigidbody>().velocity = shooting_speed * 2 * Vector3.right;
 
                     Destroy(new_bullet, 4);
                 }
@@ -104,10 +105,11 @@ public class Controller : MonoBehaviour {
             }
             if (Input.GetKeyDown(KeyCode.O))
             {
-                if (bullet != null)
+                if (bullet1 != null)
                 {
-                    GameObject new_bullet = Instantiate(bullet);
-
+                    GameObject new_bullet = Instantiate(bullet1);
+                    new_bullet.GetComponent<MeshRenderer>().material.color = Color.yellow;
+                    new_bullet.GetComponent<Transform>().localScale = 2 * Vector3.one;
                     new_bullet.transform.localPosition = transform.position + 2 * Vector3.left;
                     new_bullet.GetComponent<Rigidbody>().velocity = shooting_speed * Vector3.left;
 
@@ -116,12 +118,12 @@ public class Controller : MonoBehaviour {
             }
             if (Input.GetKey(KeyCode.P))
             {
-                if (bullet != null)
+                if (bullet2 != null)
                 {
-                    GameObject new_bullet = Instantiate(bullet);
+                    GameObject new_bullet = Instantiate(bullet2);
 
                     new_bullet.transform.localPosition = transform.position + 2 * Vector3.left;
-                    new_bullet.GetComponent<Rigidbody>().velocity = shooting_speed * Vector3.left;
+                    new_bullet.GetComponent<Rigidbody>().velocity = shooting_speed * 2 * Vector3.left;
 
                     Destroy(new_bullet, 4);
                 }
@@ -132,7 +134,7 @@ public class Controller : MonoBehaviour {
     
 
     public float moving_speed, jump_speed, shooting_speed;
-    public GameObject bullet;
-
+    public GameObject bullet1;
+    public GameObject bullet2;
     Rigidbody rb;
 }

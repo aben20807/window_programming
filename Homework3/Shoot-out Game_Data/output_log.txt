@@ -2,10 +2,10 @@ Mono path[0] = 'D:/cygwin/home/user/pro/col4/window_programming/Homework3/Shoot-
 Mono path[1] = 'D:/cygwin/home/user/pro/col4/window_programming/Homework3/Shoot-out Game_Data/Mono'
 Mono config path = 'D:/cygwin/home/user/pro/col4/window_programming/Homework3/Shoot-out Game_Data/Mono/etc'
 PlayerConnection initialized from D:/cygwin/home/user/pro/col4/window_programming/Homework3/Shoot-out Game_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55122
-Multi-casting "[IP] 192.168.56.1 [Port] 55122 [Flags] 2 [Guid] 1430706525 [EditorId] 3689606687 [Version] 1048832 [Id] WindowsPlayer(DESKTOP-KL52M1U) [Debug] 0" to [225.0.0.222:54997]...
-Started listening to [0.0.0.0:55122]
-PlayerConnection already initialized - listening to [0.0.0.0:55122]
+PlayerConnection initialized network socket : 0.0.0.0 55468
+Multi-casting "[IP] 192.168.56.1 [Port] 55468 [Flags] 2 [Guid] 3001988715 [EditorId] 2309660025 [Version] 1048832 [Id] WindowsPlayer(DESKTOP-KL52M1U) [Debug] 0" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55468]
+PlayerConnection already initialized - listening to [0.0.0.0:55468]
 Initialize engine version: 5.5.1f1 (88d00a7498cd)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -27,7 +27,7 @@ Platform assembly: D:\cygwin\home\user\pro\col4\window_programming\Homework3\Sho
 Loading D:\cygwin\home\user\pro\col4\window_programming\Homework3\Shoot-out Game_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
 Platform assembly: D:\cygwin\home\user\pro\col4\window_programming\Homework3\Shoot-out Game_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading D:\cygwin\home\user\pro\col4\window_programming\Homework3\Shoot-out Game_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.073 seconds
+- Completed reload, in  0.027 seconds
 Platform assembly: D:\cygwin\home\user\pro\col4\window_programming\Homework3\Shoot-out Game_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\cygwin\home\user\pro\col4\window_programming\Homework3\Shoot-out Game_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -35,6 +35,6 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.762772 ms
+UnloadTime: 4.977536 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 101ac -> priority: 1 
+  Thread -> id: dfc4 -> priority: 1 
