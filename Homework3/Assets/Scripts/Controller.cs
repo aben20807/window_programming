@@ -10,7 +10,7 @@ public class Controller : MonoBehaviour {
     {               // Use this for initialization, execute before Start()
         //Debug.Log("Awake");
     }
-    
+
 	void Start ()   //execute once at first and script is enable
     {               // Use this for initialization, execute after Awake()
         //Debug.Log("Start");
@@ -22,14 +22,14 @@ public class Controller : MonoBehaviour {
 
         //t.localScale = 5 * Vector3.one;
         mr.material.color = Color.red;
-        
+
     }
 
 
     void Update ()  //Update is called once per frame (default 60 frames per second)
     {
         //Debug.Log("Update");
-        
+
         if(this.gameObject.name == "CubeA")
         {
             if (Input.GetKey(KeyCode.W) && Collide.isGameover == false)
@@ -131,7 +131,7 @@ public class Controller : MonoBehaviour {
         }
     }
 
-    
+
 
     public float moving_speed, jump_speed, shooting_speed;
     public GameObject bullet1;
