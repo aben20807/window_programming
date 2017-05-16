@@ -48,7 +48,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BackMenu.cs" />
      <Compile Include="Assets\Scripts\Collide.cs" />
+     <Compile Include="Assets\Scripts\Collide2.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
+     <Compile Include="Assets\Scripts\Controller2.cs" />
      <Compile Include="Assets\Scripts\ExitButton.cs" />
      <Compile Include="Assets\Scripts\Snow.cs" />
      <Compile Include="Assets\Scripts\StartButton.cs" />
