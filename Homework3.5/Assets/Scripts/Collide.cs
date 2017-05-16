@@ -76,6 +76,11 @@ public class Collide : MonoBehaviour
     {
         set
         {
+            if (value < 0)
+            {
+                lifePoint = 0;
+                lifePointmesh.text = lifePoint.ToString();
+            }
             if (value >= 0)
             {
                 lifePoint = value;
