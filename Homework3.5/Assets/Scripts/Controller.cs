@@ -71,16 +71,38 @@ public class Controller : MonoBehaviour
                     Destroy(new_bullet, 4);
                 }
             }
-            if (Input.GetKey(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.C))
             {
                 if (bullet2 != null)
                 {
-                    GameObject new_bullet = Instantiate(bullet2);
+                    for(int i = -2; i <= 2; i++)
+                    {
+                        GameObject new_bullet = Instantiate(bullet2);
 
-                    new_bullet.transform.localPosition = transform.position + 2 * Vector3.right;
-                    new_bullet.GetComponent<Rigidbody>().velocity = shooting_speed * 2 * Vector3.right;
+                        new_bullet.transform.localPosition = transform.position + 4 * Vector3.right + i * Vector3.right;
+                        new_bullet.GetComponent<Rigidbody>().velocity = shooting_speed * 1 * Vector3.right + shooting_speed * i * Vector3.forward;
+                        //new_bullet.GetComponent<Rigidbody>().velocity = ;
+                        //Debug.Log(new_bullet.GetComponent<Rigidbody>().velocity);
+                        Destroy(new_bullet, 4);
+                    }
+                    
 
-                    Destroy(new_bullet, 4);
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                if (body != null)
+                {
+                    for (int i = -2; i <= 2; i++)
+                    {
+                        GameObject new_body = Instantiate(body);
+
+                        new_body.transform.localPosition = transform.position + 4 * i * Vector3.forward;
+                        //Debug.Log(new_body.GetComponent<Rigidbody>().velocity);
+                        Destroy(new_body, 6);
+                    }
+
+
                 }
             }
         }
@@ -125,16 +147,37 @@ public class Controller : MonoBehaviour
                     Destroy(new_bullet, 4);
                 }
             }
-            if (Input.GetKey(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.P))
             {
                 if (bullet2 != null)
                 {
-                    GameObject new_bullet = Instantiate(bullet2);
+                    for (int i = -2; i <= 2; i++)
+                    {
+                        GameObject new_bullet = Instantiate(bullet2);
 
-                    new_bullet.transform.localPosition = transform.position + 2 * Vector3.left;
-                    new_bullet.GetComponent<Rigidbody>().velocity = shooting_speed * 2 * Vector3.left;
+                        new_bullet.transform.localPosition = transform.position + 4 * Vector3.left + i * Vector3.left;
+                        new_bullet.GetComponent<Rigidbody>().velocity = shooting_speed * 1 * Vector3.left + shooting_speed * i * Vector3.forward;
+                        //Debug.Log(new_bullet.GetComponent<Rigidbody>().velocity);
+                        Destroy(new_bullet, 4);
+                    }
 
-                    Destroy(new_bullet, 4);
+
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                if (body != null)
+                {
+                    for (int i = -2; i <= 2; i++)
+                    {
+                        GameObject new_body = Instantiate(body);
+
+                        new_body.transform.localPosition = transform.position + 4 * i * Vector3.forward;
+                        //Debug.Log(new_body.GetComponent<Rigidbody>().velocity);
+                        Destroy(new_body, 6);
+                    }
+
+
                 }
             }
         }
@@ -145,6 +188,7 @@ public class Controller : MonoBehaviour
     public float moving_speed, jump_speed, shooting_speed;
     public GameObject bullet1;
     public GameObject bullet2;
+    public GameObject body;
     Rigidbody rb;
     Animator animator;
 }

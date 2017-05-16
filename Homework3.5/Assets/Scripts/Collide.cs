@@ -10,15 +10,16 @@ public class Collide : MonoBehaviour
     void Start()
     {
         //Transform t = GetComponent<Transform>();    //<>: templete
-        MeshRenderer mr = GetComponent<MeshRenderer>();
+        //MeshRenderer mr = GetComponent<MeshRenderer>();
         //gameObject.AddComponent<Rigidbody>();
 
         //t.localScale = 5 * Vector3.one;
-        if (this.gameObject.name == "TriggerA")
-            mr.material.color = Color.red;
-        else
-            mr.material.color = Color.blue;
+        //if (this.gameObject.name == "TriggerA")
+        //    mr.material.color = Color.red;
+        //else
+        //    mr.material.color = Color.blue;
         LifePoint = 2000;
+        //Debug.Log(this.gameObject.name + " " +LifePoint);
         isGameover = false;
         once = false;
         //lifePointmesh = GameObject.Find("LifePointA").GetComponent<TextMesh>();
@@ -29,7 +30,7 @@ public class Collide : MonoBehaviour
     void Update()
     {
 
-        if (this.GetComponent<Transform>().position.y < -1 && isGameover == false)
+        if (isGameover == false && this.GetComponent<Transform>().position.y < -2)
         {
             LifePoint = 0;
         }
@@ -51,15 +52,16 @@ public class Collide : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider collider)
+    void OnCollisionEnter(Collision collider)
     {
-        if (collider.gameObject.name == "Bullet1(Clone)" && isGameover == false)
+        Debug.Log(collider.gameObject.name);
+        if (collider.gameObject.name == "Bullet1(Clone)" && isGameover == false && (this.gameObject.name == "Mimi" || this.gameObject.name == "Taiki"))
         {
             LifePoint -= 200;
             Destroy(collider.gameObject);
             //Debug.Log(Score.ToString());
         }
-        if (collider.gameObject.name == "Bullet2(Clone)" && isGameover == false)
+        if (collider.gameObject.name == "Bullet2(Clone)" && isGameover == false && (this.gameObject.name == "Mimi" || this.gameObject.name == "Taiki"))
         {
             LifePoint -= 50;
             Destroy(collider.gameObject);
