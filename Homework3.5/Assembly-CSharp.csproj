@@ -46,10 +46,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BackMenu.cs" />
      <Compile Include="Assets\Scripts\Collide.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
      <Compile Include="Assets\Scripts\ExitButton.cs" />
+     <Compile Include="Assets\Scripts\Snow.cs" />
      <Compile Include="Assets\Scripts\StartButton.cs" />
+     <Compile Include="Assets\Scripts\StartGame1.cs" />
+     <Compile Include="Assets\Scripts\StartGame2.cs" />
      <None Include="Assets\Resources\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/program/code/unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

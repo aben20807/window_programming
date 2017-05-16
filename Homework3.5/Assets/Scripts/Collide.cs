@@ -54,7 +54,7 @@ public class Collide : MonoBehaviour
 
     void OnCollisionEnter(Collision collider)
     {
-        Debug.Log(collider.gameObject.name);
+        //Debug.Log(collider.gameObject.name);
         if (collider.gameObject.name == "Bullet1(Clone)" && isGameover == false && (this.gameObject.name == "Mimi" || this.gameObject.name == "Taiki"))
         {
             LifePoint -= 200;
